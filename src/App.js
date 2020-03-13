@@ -1,5 +1,9 @@
 import React from 'react';
+import Search from './buscador/index'
 import logo from './logo.svg';
+import { } from 'antd';
+import 'antd/dist/antd.css';
+
 import './App.css';
 
 function App() {
@@ -18,6 +22,7 @@ function App() {
         >
           Learn React
         </a>
+        <Search/>
       </header>
     </div>
   );
