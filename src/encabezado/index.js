@@ -1,11 +1,17 @@
 import React from 'react';
-import { Input } from 'antd';
+import 'antd/dist/antd.css';
+import { PageHeader } from 'antd';
+import './styles.css';
 
-function Search (){
-
-    return(
-       <imput> </imput> 
-
+function Encabezado() {
+    return (
+        <PageHeader
+            className = "site-page-header"
+            class = "title.important"
+            onBack={() => null}
+            title="Patigator"
+        />
+        
     );
 }
-export default Search;
+export default Encabezado;
