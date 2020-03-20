@@ -3,16 +3,14 @@ import { Menu }  from 'antd';
 import 'antd/dist/antd.css';
 import './style.css'
 
-
 class Navbar extends React.Component {
   state = {
-      current:null,
-        };
-
-  handleClick = e => {
-    this.setState({ current: e.key, });
+    current: null
   };
-
+  
+  handleClick = e => {this.setState({ current: e.key });
+  };
+  
   render() {
     return (
       <Menu onClick={this.handleClick} className="ant-menu-horizontal" selectedKeys={[this.state.current]} mode="horizontal">
