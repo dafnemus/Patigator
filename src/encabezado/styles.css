@@ -1,6 +1,17 @@
-.site-page-header {
-  background-color: blue;
+header{
+  background-color: #198ffb;
+  margin: 0;
+  padding: .5em;
 }
-.title.important{
-  color:#ffffff;
+
+header>h1{
+  display: inline;
+  font-weight: bold;
+  color: white;
+}
+
+#logo{
+
+  margin: 0 1em;
+  width: 35px;
 }
