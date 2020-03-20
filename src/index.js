@@ -1,12 +1,51 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React, { useState, useRef, useEffect } from "react";
+import ReactDOM from "react-dom";
+import { PlayCircleTwoTone } from '@ant-design/icons';
+import "./styles.css";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+function App() {
+  const audioPlayer = useRef(null);
+  const [progress, setProgress] = useState(80);
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+  useEffect(() => {
+    console.log(progress, audioPlayer.current.duration);
+  }, [progress]);
+  const [isPlay, setPlay] = useState(true);
+  const toggleAudio = () => {
+    if (isPlay) {
+      audioPlayer.current.play();
+      setPlay(false);
+    } else {
+      audioPlayer.current.pause();
+      setPlay(true);
+    }
+  };
+  return (
+    <div>
+      <div className="audio">
+        <div className="player">
+          <div className="logo" onClick={toggleAudio}>
+            <b><PlayCircleTwoTone /></b>
+          </div>
+        </div>
+        <div className="progress">
+          <div className="loading" style={{ width: `${progress}%` }} />
+        </div>
+      </div>
+
+      <audio
+        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+        ref={audioPlayer}
+        onTimeUpdate={e => {
+          setProgress(
+            (audioPlayer.current.currentTime * 100) /
+              audioPlayer.current.duration
+          );
+        }}
+      />
+    </div>
+  );
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
