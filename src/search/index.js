@@ -10,7 +10,7 @@ function Buscar() {
       <Search
         placeholder=" "
         onSearch={value => console.log(value)}
-        style={{ width: 200 }}
+        style={{ width: 210 }}
       />
     </div>
   );
