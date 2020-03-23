@@ -8,7 +8,8 @@ class Navbar extends React.Component {
     current: null
   };
   
-  handleClick = e => {this.setState({ current: e.key });
+  handleClick = e => {
+    this.setState({ current: e.key });
   };
   
   render() {
