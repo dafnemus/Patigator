@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     console.log(progress, audioPlayer.current.duration);
   }, [progress]);
-  const [isPlay, setPlay] = useState(true);
+  const [isPlaying, setPlaying] = useState(true);
   const toggleAudio = () => {
     if (isPlay) {
       audioPlayer.current.play();
