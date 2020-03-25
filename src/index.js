@@ -12,12 +12,12 @@ function App() {
   }, [progress]);
   const [isPlaying, setPlaying] = useState(true);
   const toggleAudio = () => {
-    if (isPlay) {
-      audioPlayer.current.play();
-      setPlay(false);
-    } else {
+    if (isPlaying) {
       audioPlayer.current.pause();
-      setPlay(true);
+      setIsPlaying(false);
+    } else {
+      audioPlayer.current.play();
+      setIsPlaying(true);
     }
   };
   return (
