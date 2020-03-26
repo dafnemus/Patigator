@@ -1,0 +1,53 @@
+  .audio {
+    width: 80%;
+    height: 5px;
+    background-color: gray;
+    display: flex;
+    border-radius: 50px;
+    margin-left: 25px;
+    cursor: pointer;
+  }
+  .audio-title{
+    margin-left: 20px;
+    width: 100%;
+  }
+  .progress {
+    width: 100%;
+  }
+  .loading {
+    width: 10%;
+    height: 100%;
+    border-radius: 50px;
+    background-color: rgb(66, 186, 241);
+  }
+  b {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+  }
+  .card-container{    
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    border: 1px solid #cecece;
+    padding: 1em 2em;
+    align-items: center;
+  }
+  .like-dislike {
+    display: flex;
+  }
+  .like-dislike img {
+    width: 30px;
+    height: 30px;
+  }
+  .dislike{
+    transform: scaleY(-1);
+  }
+  .image{
+    border: 1px solid #9b9b9b;
+  }
+  .icon-play{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+  }
