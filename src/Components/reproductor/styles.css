@@ -1,0 +1,33 @@
+.player{
+
+    display: flexbox;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.songData{
+
+    margin: 0 1em;
+}
+
+.SongTitle{
+
+    padding: 0 1em;
+    margin-left: 1em;
+}
+
+.songControls{
+
+    padding: .5em 1em;
+}
+
+.songPlay{
+    font-size: 1.5em;
+}
+
+.songBar{
+
+    width: 100%;
+}
