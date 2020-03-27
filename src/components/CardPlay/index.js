@@ -8,7 +8,7 @@ import "./styles.css";
     const [title, setTitle] = useState("Bad Bunny - Si la veo a tu mamá");
     const [countLikes, setCountLikes] = useState(0);
     const [countDislikes, setCountDislikes] = useState(0);
-  
+      
     useEffect(() => {
       console.log(progress, audioPlayer.current.duration);
     }, [progress]);
@@ -29,10 +29,12 @@ import "./styles.css";
         audioPlayer.current.play();
         setIsPlaying(true);
       }
+      
   }
+
     return (
       <div className="card-container">
-        <img className="image" src="https://via.placeholder.com/80"></img>
+          <img className="image" src="https://via.placeholder.com/100"></img>
         <div className="audio-title">
           <p>{title}</p>
           <span className="icon-play">{isPlaying?(<PauseCircleTwoTone style={{fontSize:"25px"}}/>) : (<PlayCircleTwoTone style={{fontSize:"25px"}}/>)}</span>
@@ -53,10 +55,9 @@ import "./styles.css";
           <span onClick={handleDislike}><img className="dislike" src="https://img.icons8.com/pastel-glyph/64/000000/facebook-like.png"/><small>{countDislikes}</small></span>
           <img src="https://img.icons8.com/android/24/000000/more.png"/>
         </div>
-        
   
         <audio
-          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+          src="Bad Bunny - Si la veo a tu mama.mp3"
           ref={audioPlayer}
           onTimeUpdate={e => {
             setProgress(

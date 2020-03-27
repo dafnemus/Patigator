@@ -8,6 +8,8 @@ function App() {
     <article>
     <CardPlay />
     <CardPlay />
+    <CardPlay />
+    <CardPlay />
     </article>
   )
 }

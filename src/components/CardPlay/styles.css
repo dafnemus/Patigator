@@ -2,7 +2,7 @@
     width: 80%;
     height: 5px;
     background-color: gray;
-    display: flex;
+    display: inline-flex;
     border-radius: 50px;
     margin-left: 25px;
     cursor: pointer;
@@ -15,7 +15,6 @@
     width: 100%;
   }
   .loading {
-    width: 10%;
     height: 100%;
     border-radius: 50px;
     background-color: rgb(66, 186, 241);
@@ -32,6 +31,7 @@
     border: 1px solid #cecece;
     padding: 1em 2em;
     align-items: center;
+    
   }
   .like-dislike {
     display: flex;
@@ -42,9 +42,11 @@
   }
   .dislike{
     transform: scaleY(-1);
+
   }
   .image{
     border: 1px solid #9b9b9b;
+    margin-left: -8px;
   }
   .icon-play{
     width: 20px;
