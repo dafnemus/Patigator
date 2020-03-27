@@ -1,0 +1,14 @@
+.menu-dropdown{
+   border: 1px solid white;
+   background: white;
+   padding-left: 0px;
+}
+
+.ellipsis{
+   border:none;
+   background: transparent;
+}
+
+.item:hover{
+    color: rgba(4, 105, 221, 0.719);
+}

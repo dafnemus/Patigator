@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { PlayCircleTwoTone, PauseCircleTwoTone } from '@ant-design/icons';
-import "./styles.css";
 import EditAndShare from "../edit-and-share";
+import "./styles.css";
 
     const CardPlay = (props) => {
     const audioPlayer = useRef(null);
