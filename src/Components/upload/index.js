@@ -25,7 +25,8 @@ function ButtonUpload() {
     return (
         <div>
             <Upload {...props} >
-                <Button size="large" type="primary" className="upload" icon={<Logo id="upload-icon" width="22px" height="22px"/>}>
+                <Button size="large" type="primary" className="upload"
+                 icon={<Logo id="upload-icon" width="22px" height="22px"/>}>
                     <p>Upload</p>
                 </Button>
             </Upload>
