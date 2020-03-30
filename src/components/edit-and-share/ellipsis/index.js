@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
+import { EllipsisOutlined } from '@ant-design/icons';
 
 function Ellipsis() {
-    return  <img src="https://img.icons8.com/android/24/000000/more.png"/>
-}
+    return  <EllipsisOutlined />
+};
 
-export default Ellipsis
+export default Ellipsis;
