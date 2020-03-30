@@ -1,21 +1,24 @@
 import React from 'react';
-import Ellipsis from './ellipsis';
+import { EllipsisOutlined } from '@ant-design/icons';
 import { Dropdown } from 'antd';
 import MenuDropdown from './menudropdown';
 
 import 'antd/dist/antd.css';
 import './style.css';
 
-function EditAndShare() {
-  const menu = <MenuDropdown/>
+class EditAndShare extends React.Component {
 
+  render(){
+    const menu = <MenuDropdown/>
+    
     return(
-        <Dropdown overlay={menu} trigger={['click']}>
+        <Dropdown overlay={menu} >
         <button className="ant-dropdown-link ellipsis" onClick={e => e.preventDefault()}>
-        <Ellipsis/>
+        <EllipsisOutlined/>
         </button>
         </Dropdown>
     );
+  };
 };
 
 export default EditAndShare;
