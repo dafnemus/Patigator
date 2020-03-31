@@ -12,7 +12,7 @@ class EditAndShare extends React.Component {
     const menu = <MenuDropdown/>
     
     return(
-        <Dropdown overlay={menu} >
+        <Dropdown overlay={menu} zIndex={2} >
         <button className="ant-dropdown-link ellipsis" onClick={e => e.preventDefault()}>
         <EllipsisOutlined/>
         </button>

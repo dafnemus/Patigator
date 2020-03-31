@@ -25,10 +25,10 @@ class EditAudio extends React.Component {
           onCancel={this.handleCancel}
           okText="Aceptar"
           cancelText="Cancelar"
-          zIndex={2000}>
+          zIndex={2}>
         <label> Nombre </label>
         <Input/>
-        <InputChange zIndex={4000}/>
+        <InputChange zIndex={3}/>
         </Modal>
       </div>
     );

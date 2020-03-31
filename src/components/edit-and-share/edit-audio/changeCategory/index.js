@@ -19,7 +19,7 @@ return(
     defaultValue={['a10', 'c12']}
     listItemHeight={10} 
     listHeight={250} 
-    zIndex={2000}>
+    zIndex={4}>
     {children}
   </Select>
 );
