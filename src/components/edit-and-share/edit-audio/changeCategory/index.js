@@ -18,7 +18,8 @@ return(
     placeholder="Categorias"
     defaultValue={['a10', 'c12']}
     listItemHeight={10} 
-    listHeight={250} >
+    listHeight={250} 
+    zIndex={2000}>
     {children}
   </Select>
 );
