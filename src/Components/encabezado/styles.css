@@ -1,17 +1,16 @@
-header{
+header {
   background-color: #198ffb;
   margin: 0;
   padding: .5em;
 }
 
-header>h1{
+header > h1 {
   display: inline;
   font-weight: bold;
   color: white;
 }
 
-#logo{
-
+.logo {
   margin: 0 1em;
   width: 35px;
 }

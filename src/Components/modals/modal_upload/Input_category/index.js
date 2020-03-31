@@ -1,7 +1,8 @@
 import React from 'react';
-import 'antd/dist/antd.css';
 import { Select, Divider, Input } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
+import 'antd/dist/antd.css';
+import './styles.css';
 
 const { Option } = Select;
 
@@ -11,7 +12,7 @@ for (let i = 10; i < 36; i++) {
 }
 
 function handleChange(value) {
-    console.log(`selected ${value}`);
+  console.log(`selected ${value}`);
 }
 
 let index = 0;
@@ -42,33 +43,23 @@ class Category extends React.Component {
 
     return (
       <Select mode="tags" style={{ width: '100%' }} onChange={handleChange} tokenSeparators={[',']}
-        
         placeholder="Seleccionar"
         dropdownRender={menu => (
           <div>
             {menu}
             <Divider style={{ margin: '4px 0' }} />
-            
-            <div style={{ 
-                display: 'flex',
-                flexWrap: 'nowrap',
-                padding: 8 }}>
+
+            <div className="Categoria">
               <Input style={{ flex: 'auto' }} value={name} onChange={this.onNameChange} />
-              <a
-                style={{ flex: 'none',
-                padding: '8px',
-                display: 'block', 
-                cursor: 'pointer' }}
-                onClick={this.addItem}
-              >
-              <PlusOutlined /> Crear 
+              <a onClick={this.addItem} >
+                <PlusOutlined /> Crear
               </a>
             </div>
           </div>
         )}
       > {children}
         {items.map(item => (
-          <Option key={item}>{item}</Option>
+          <Option key={item} > {item}</Option>
         ))}
       </Select>
     );

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Modal, Button } from 'antd';
-import { ReactComponent as Logo } from './img/bg-upload.svg'
-import Avatar from '../../uploadCover/'
+import { ReactComponent as Logo } from './img/bg-upload.svg';
 import { Input } from 'antd';
-import Category from './Input_category/'
-import MyUpload from './button_upload/'
+import Avatar from './uploadCover';
+import Category from './Input_category/';
+import MyUpload from './button_upload/';
 import 'antd/dist/antd.css';
-import './styles.css'
+import './styles.css';
 
 class UploadSong extends React.Component {
   state = { visible: false };
@@ -35,18 +35,16 @@ class UploadSong extends React.Component {
     return (
       <div>
         <Button
-
           size="large"
           type="primary"
           className="upload"
-          icon={<Logo id="upload-icon" />}
+          icon={<Logo className="upload-icon" />}
           onClick={this.showModal}
         >
           <p>Upload</p>
         </Button>
 
         <Modal
-
           title="Subir nuevo audio"
           visible={this.state.visible}
           onOk={this.handleOk}
@@ -54,13 +52,12 @@ class UploadSong extends React.Component {
           okText="Aceptar"
           cancelText="Cancelar"
         >
-        <Avatar />
-        <p>Nombre</p>
-        <Input placeholder="Escribir nombre del audio" />
-        <p>Categoría</p>
-        <Category/>
-        <MyUpload/>
-
+          <Avatar />
+          <p>Nombre</p>
+          <Input placeholder="Escribir nombre del audio" />
+          <p>Categoría</p>
+          <Category />
+          <MyUpload />
         </Modal>
       </div>
     );

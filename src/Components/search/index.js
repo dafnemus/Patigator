@@ -1,20 +1,17 @@
 import React from 'react';
-import 'antd/dist/antd.css';
-import './styles.css'
 import { Input } from 'antd';
+import 'antd/dist/antd.css';
 
 const { Search } = Input;
 
-function Buscardor() {
+function Buscador() {
   return (
-    <div>
-      <Search 
-        size="large"
-        placeholder=" "
-        onSearch={value => console.log(value)}
-      />
-    </div>
+    <Search
+      size="large"
+      placeholder=" "
+      onSearch={value => console.log(value)}
+    />
   );
 }
 
-export default Buscardor;
+export default Buscador;

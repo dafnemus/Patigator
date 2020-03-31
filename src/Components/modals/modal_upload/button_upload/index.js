@@ -1,7 +1,7 @@
 import React from 'react';
-import 'antd/dist/antd.css';
 import { Upload, Button } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
+import 'antd/dist/antd.css';
 
 class MyUpload extends React.Component {
   state = {
