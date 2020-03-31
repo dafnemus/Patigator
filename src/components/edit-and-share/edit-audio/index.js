@@ -1,10 +1,11 @@
 import React from 'react';
-import { Modal, Button, Input } from 'antd';
+import { Modal, Button, Input, Divider } from 'antd';
 import { EditOutlined } from '@ant-design/icons';
+import InputChange from './changeCategory';
+import ChangeImage from './changeImage';
+import ChangeAudio from './changeAudio';
 import 'antd/dist/antd.css';
 import './style.css';
-import InputChange from './changeCategory';
-
 
 class EditAudio extends React.Component {
   state = { visible: false };
@@ -18,17 +19,22 @@ class EditAudio extends React.Component {
       <div>
         <Button className="open-modal" type="link" onClick={this.showModal}><EditOutlined className="icon-edit"/> Editar </Button>
         <Modal
-        className="modal"
-          title="Editar Audio"
-          visible={this.state.visible}
-          onOk={this.handleOk}
-          onCancel={this.handleCancel}
-          okText="Aceptar"
-          cancelText="Cancelar"
-          zIndex={2}>
+        title="Editar Audio"
+        visible={this.state.visible}
+        onOk={this.handleOk}
+        onCancel={this.handleCancel}
+        okText="Aceptar"
+        cancelText="Cancelar"
+        zIndex={2}>
+         <ChangeImage/>
+        <Divider style={{height:'0px', margin:'5px'}}/>
         <label> Nombre </label>
         <Input/>
+        <Divider style={{height:'0px', margin:'5px'}}/>
+        <label> Categorias </label>
         <InputChange zIndex={3}/>
+        <Divider style={{height:'0px', margin:'5px'}}/>
+        <ChangeAudio/>
         </Modal>
       </div>
     );

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { PlayCircleTwoTone, PauseCircleTwoTone } from '@ant-design/icons';
 import EditAndShare from "../edit-and-share";
+import ImageAudio from '../ImageAudio'
 import "./styles.css";
 
     const CardPlay = (props) => {
@@ -33,7 +34,7 @@ import "./styles.css";
   }
     return (
       <div className="card-container">
-        <img className="image" src="https://via.placeholder.com/80"></img>
+        <ImageAudio/>
         <div className="audio-title">
           <p>{title}</p>
           <span className="icon-play">{isPlaying?(<PauseCircleTwoTone style={{fontSize:"25px"}}/>) : (<PlayCircleTwoTone style={{fontSize:"25px"}}/>)}</span>
