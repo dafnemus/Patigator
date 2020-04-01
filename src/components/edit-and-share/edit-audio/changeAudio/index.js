@@ -12,8 +12,11 @@ class ChangeAudio extends React.Component {
   render() {
      return (
        <div >
-         <PaperClipOutlined /> Url-Audio
-         <Button type="link" handleChange={this.handleChange}><CloseOutlined/></Button>
+       <Button type="link" change={this.state} onClick={this.handleChange}> 
+          <PaperClipOutlined style={{color: 'rgba(0, 0, 0, 0.65)'}}/> 
+          Url-Audio  
+          <CloseOutlined style={{color: 'rgba(0, 0, 0, 0.65)'}}/> 
+        </Button>
          {this.state.change === true && <UploadAudio />}
          </div>
       );

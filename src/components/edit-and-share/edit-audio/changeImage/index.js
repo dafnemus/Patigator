@@ -2,6 +2,7 @@ import React from 'react';
 import ImageAudio from '../../../ImageAudio';
 import { Upload, message } from 'antd';
 import 'antd/dist/antd.css';
+import './style.css';
 
 function getBase64(img, callback) {
     const reader = new FileReader();
@@ -30,8 +31,7 @@ class ChangeImage extends React.Component{
           getBase64(info.file.originFileObj, imageUrl =>
             this.setState({ imageUrl, loading: false}));}
       };
-    
-      render() {
+    render() {
         const uploadButton = (<div>{this.state.loading ? <ImageAudio/> : <ImageAudio/>}</div>
         );
         const { imageUrl } = this.state;

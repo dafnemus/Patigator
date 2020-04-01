@@ -13,7 +13,9 @@ class EditAndShare extends React.Component {
     
     return(
         <Dropdown overlay={menu} zIndex={2} >
-        <button className="ant-dropdown-link" type="link" onClick={e => e.preventDefault()}>
+        <button className="ant-dropdown-link" 
+        style={{background: 'transparent', border: 'none', fontSize: '30px'}} 
+        onClick={e => e.preventDefault()}>
         <EllipsisOutlined/>
         </button>
         </Dropdown>
