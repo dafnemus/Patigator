@@ -4,11 +4,6 @@
    padding-left: 0px;
 };
 
-.ellipsis{
-   border: none;
-   background: transparent;
-};
-
 .item:hover{
     color: rgba(4, 105, 221, 0.719);
 };
