@@ -1,64 +1,95 @@
-  .audio {
-    width: 80%;
-    height: 5px;
-    background-color: gray;
-    display: inline-flex;
-    border-radius: 50px;
-    margin-left: 25px;
-    cursor: pointer;
-  }
+.audio {
+  width: 65%;
+  height: 4px;
+  background-color: gray;
+  display: inline-flex;
+  border-radius: 50px;
+  margin-left: 25px;
+  cursor: pointer;
+}
 
-  .audio-title{
-    margin-left: 20px;
-    width: 100%;
-  }
+.audio-title{
+  margin-left: 30px;
+  width: 100%;
+  display: flex;
+  /* wrap para que se baje y  center para que se centre (? jaja  */
+  align-items: center;
+  flex-wrap: wrap;
+}
+/* le di width 100 para que ocupe todo el espacio y lo otro se baje */
+.title{
+ min-width: 100%;
+}
 
-  .progress {
-    width: 100%;
-    height: 100%;
-    border-radius: 50px;
-    background-color: rgb(66, 186, 241);
-  }
+.progress {
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  background-color: rgb(66, 186, 241);
+}
 
-  .loading {
-  }
+.loading {
+}
 
-  b {
-    position: absolute;
-    top: 5px;
-    left: 10px;
-  }
+b {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
 
-  .card-container{    
-    display: flex;
-    justify-content: space-around;
-    width: 50%;
-    border: 1px solid #cecece;
-    padding: 1em 2em;
-    align-items: center;
-  }
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+  border: 1px solid #cecece;
+  padding: 1em 1.8em;
+  align-items: center;
+  margin: 10px;
+}
 
-  .like-dislike {
-    display: flex;
-    align-items: center;
-  }
+.like-dislike {
+  min-width: 50px;
+  margin-left: 0;
+  min-height: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  align-items: center;
+  margin-right: 25px;
+}
+/* column para que este uno abajo del otro y center para que esten centrados horizontalmente  cuando usas column se centra horizontal con align */
+.container-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .like-dislike img {
-    width: 30px;
-    height: 30px;
-  }
+.like-dislike .container-icon img {
+  width: 30px;
+  height: 30px;
+}
+/* lo subo un poquito para que queden alineados */
+.like {
+  transform: translateY(-3px);
+  color: rgb(211, 211, 211);
+}
 
-  .dislike{
-    transform: scaleY(-1);
-  }
+.dislike {
+  transform: rotate(0deg);
+  color: rgb(211, 211, 211);
+}
 
-  .image{
-    border: 1px solid #9b9b9b;
-    margin-left: -8px;
-  }
+.image {
+  border: 1px solid #9b9b9b;
+  margin-left: -8px;
+}
 
-  .icon-play{
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-  }
+.icon-play {
+  width: 20px;
+  height: 25px;
+  display: inline-block;
+}
+
+.More {
+  transform: rotate(90deg);
+}

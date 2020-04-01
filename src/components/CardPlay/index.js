@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { PlayCircleTwoTone, PauseCircleTwoTone } from '@ant-design/icons';
+import { PlayCircleTwoTone, PauseCircleTwoTone,LikeFilled, DislikeFilled, MoreOutlined } from '@ant-design/icons';
 import "./styles.css";
 
     const CardPlay = (props) => {
@@ -25,49 +25,62 @@ import "./styles.css";
       if (isPlaying) {
         audioPlayer.current.pause();
         setIsPlaying(false);
-  } else {
+    } else {
         audioPlayer.current.play();
         setIsPlaying(true);
-      }
+    }
       
   }
 
     return (
       <div className="card-container">
-          <img className="image" src="https://via.placeholder.com/100"></img>
-        <div className="audio-title">
-          <p>{title}</p>
-          <span className="icon-play">{isPlaying?(<PauseCircleTwoTone style={{fontSize:"25px"}}/>) : (<PlayCircleTwoTone style={{fontSize:"25px"}}/>)}</span>
-          <div className="audio">
-            <div className="player">
+        <img className="image" src="https://via.placeholder.com/70"></img>
+          <div className="audio-title">
+          {/* le di una clase al titulo para darle un ancho en el css */}
+            <p className="title">{title}</p>
+            <span className="icon-play">{isPlaying?(<PauseCircleTwoTone style={{fontSize:"25px"}}/>) : (<PlayCircleTwoTone style={{fontSize:"25px"}}/>)}</span>
+              <div className="audio">
+              <div className="player">
             <div className="logo" onClick={toggleAudio}>
-            
+          </div>
+        </div>
+        <div className="progress">
+            <div className="loading" style={{ width: `${progress}%` }} />
             </div>
           </div>
-          <div className="progress">
-            <div className="loading" style={{ width: `${progress}%` }} />
-          </div>
+        </div>
+        <div className="like-dislike">
+      {/* meti cada icono con el contador en un contenedor asi le das un display: flex y lo direccionar como column para que quede uno abajo del otro y no uno al lado medio rancio */}
+        <div className="container-icon">
+          <span className="like" onClick={handleLike}>
+          <LikeFilled />
+          </span>
+          <span>{countLikes}</span>
+        </div>
+          
+        <div className="container-icon">
+          <span className="dislike" onClick={handleDislike}>
+          <DislikeFilled />
+          </span>
+          <span>{countDislikes}</span>
         </div>
       </div>
-  
-      <div className="like-dislike">
-          <span onClick={handleLike}><img src="https://img.icons8.com/pastel-glyph/64/000000/facebook-like.png"/><small>{countLikes}</small></span>
-          <span onClick={handleDislike}><img className="dislike" src="https://img.icons8.com/pastel-glyph/64/000000/facebook-like.png"/><small>{countDislikes}</small></span>
-          <img src="https://img.icons8.com/android/24/000000/more.png"/>
-        </div>
-  
-        <audio
-          src="Bad Bunny - Si la veo a tu mama.mp3"
-          ref={audioPlayer}
-          onTimeUpdate={e => {
-            setProgress(
-              (audioPlayer.current.currentTime * 100) /
-                audioPlayer.current.duration
-            );
-          }}
-        />
+      <div className="More">
+        <span><MoreOutlined /></span>
       </div>
-    );
+
+      <audio
+        src="https://www.youtube.com/watch?v=3lL8oeDO2ZM"
+        ref={audioPlayer}
+        onTimeUpdate={e => {
+          setProgress(
+          (audioPlayer.current.currentTime * 100) /
+          audioPlayer.current.duration
+          );
+        }}
+      />
+    </div>
+  );
 }
 
 export default CardPlay;
