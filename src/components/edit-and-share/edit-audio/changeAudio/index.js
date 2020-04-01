@@ -14,7 +14,7 @@ class ChangeAudio extends React.Component {
        <div >
          <PaperClipOutlined /> Url-Audio
          <Button type="link" handleChange={this.handleChange}><CloseOutlined/></Button>
-         {this.state.change === true && <UploadAudio change={this.state.change}/>}
+         {this.state.change === true && <UploadAudio />}
          </div>
       );
     }

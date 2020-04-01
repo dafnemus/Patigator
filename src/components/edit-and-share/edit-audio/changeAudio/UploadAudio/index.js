@@ -1,6 +1,8 @@
 import React from 'react';
 import { Upload, Button } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
+import 'antd/dist/antd.css';
+
 
 
 class UploadAudio extends React.Component{
@@ -23,7 +25,7 @@ render() {
     multiple: true
   };
   return (
-    <Upload {...props} fileList={this.state.fileList}>
+    <Upload {...props} fileList={this.state.fileList} zIndex={4}>
       <Button>
         <UploadOutlined /> Subir audio
       </Button>

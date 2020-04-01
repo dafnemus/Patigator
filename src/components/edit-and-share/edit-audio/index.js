@@ -33,7 +33,7 @@ class EditAudio extends React.Component {
         <Divider style={{height:'0px', margin:'5px'}}/>
         <label> Categorias </label>
         <InputChange zIndex={3}/>
-        <Divider style={{height:'0px', margin:'5px'}}/>
+        <Divider style={{height:'0px', margin:'8px'}}/>
         <ChangeAudio/>
         </Modal>
       </div>
