@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
-import { PlayCircleTwoTone, PauseCircleTwoTone } from '@ant-design/icons';
+import { PlayCircleTwoTone, PauseCircleTwoTone, DislikeFilled, LikeFilled } from '@ant-design/icons';
 import EditAndShare from "../edit-and-share";
+import audioBadBunny from "../Audio/Bad Bunny - Si la veo a tu mama.mp3";
 import "./styles.css";
 
     const CardPlay = (props) => {
@@ -40,7 +41,6 @@ import "./styles.css";
           <div className="audio">
             <div className="player">
             <div className="logo" onClick={toggleAudio}>
-            
             </div>
           </div>
           <div className="progress">
@@ -48,17 +48,33 @@ import "./styles.css";
           </div>
         </div>
       </div>
-  
       <div className="like-dislike">
-          <span onClick={handleLike}><img src="https://img.icons8.com/pastel-glyph/64/000000/facebook-like.png"/><small>{countLikes}</small></span>
-          <span onClick={handleDislike}><img className="dislike" src="https://img.icons8.com/pastel-glyph/64/000000/facebook-like.png"/><small>{countDislikes}</small></span>
+        <div className="container-icon">
+          <span className="like" onClick={handleLike}>
+          <LikeFilled />
+          </span>
+          <span>{countLikes}</span>
+        </div>
+
+        <div className="container-icon">
+          <span className="dislike" onClick={handleDislike}>
+          <DislikeFilled />
+          </span>
+          <span>{countDislikes}</span>
+        </div>
+      </div>
           <EditAndShare/>
-      </div>
-      <audio
-      src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
-      ref={audioPlayer}
-      onTimeUpdate={e => { setProgress((audioPlayer.current.currentTime * 100) / audioPlayer.current.duration); }} />
-      </div>
+    <audio
+     src={audioBadBunny}
+     ref={audioPlayer}
+     onTimeUpdate={e => {
+       setProgress(
+       (audioPlayer.current.currentTime * 100) /
+       audioPlayer.current.duration
+       );
+     }}
+   />
+ </div>
     );
 }
 
