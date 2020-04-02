@@ -3,11 +3,11 @@ import CardPlay from "./components/CardPlay";
 import "./styles.css";
 
 function App() {
-  return(
-  <article>
-    <CardPlay />
-    <CardPlay />
-  </article>
+  return (
+    <article>
+      <CardPlay />
+      <CardPlay />
+    </article>
   );
 };
 

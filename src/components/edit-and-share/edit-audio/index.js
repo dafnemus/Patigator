@@ -13,28 +13,28 @@ class EditAudio extends React.Component {
   showModal = () => this.setState({ visible: true });
   handleOk = () => this.setState({ visible: false });
   handleCancel = () => this.setState({ visible: false });
-  
+
   render() {
     return (
       <div>
-        <Button className="open-modal" type="link" onClick={this.showModal}><EditOutlined className="icon-edit"/> Editar </Button>
+        <Button className="open-modal" type="link" onClick={this.showModal}><EditOutlined className="icon-edit" /> Editar </Button>
         <Modal
-        title="Editar Audio"
-        visible={this.state.visible}
-        onOk={this.handleOk}
-        onCancel={this.handleCancel}
-        okText="Aceptar"
-        cancelText="Cancelar"
-        zIndex={2}>
-         <ChangeImage/>
-        <Divider style={{height:'0px', margin:'5px'}}/>
-        <label> Nombre </label>
-        <Input/>
-        <Divider style={{height:'0px', margin:'5px'}}/>
-        <label> Categorias </label>
-        <InputChange zIndex={3}/>
-        <Divider style={{height:'0px', margin:'8px'}}/>
-        <ChangeAudio/>
+          title="Editar Audio"
+          visible={this.state.visible}
+          onOk={this.handleOk}
+          onCancel={this.handleCancel}
+          okText="Aceptar"
+          cancelText="Cancelar"
+          zIndex={2}>
+          <ChangeImage />
+          <Divider style={{ height: '0px', margin: '5px' }} />
+          <label> Nombre </label>
+          <Input />
+          <Divider style={{ height: '0px', margin: '5px' }} />
+          <label> Categorias </label>
+          <InputChange zIndex={3} />
+          <Divider style={{ height: '0px', margin: '8px' }} />
+          <ChangeAudio />
         </Modal>
       </div>
     );
