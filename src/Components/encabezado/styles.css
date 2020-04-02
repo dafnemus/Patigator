@@ -1,10 +1,10 @@
-header {
-  background-color: #198ffb;
+.header {
+  background-color: var(--Azul);
   margin: 0;
   padding: .5em;
 }
 
-header > h1 {
+.header > h1 {
   display: inline;
   font-weight: bold;
   color: white;

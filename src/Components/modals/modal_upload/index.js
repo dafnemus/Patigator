@@ -18,14 +18,12 @@ class UploadSong extends React.Component {
   };
 
   handleOk = e => {
-    console.log(e);
     this.setState({
       visible: false,
     });
   };
 
   handleCancel = e => {
-    console.log(e);
     this.setState({
       visible: false,
     });
@@ -43,7 +41,6 @@ class UploadSong extends React.Component {
         >
           <p>Upload</p>
         </Button>
-
         <Modal
           title="Subir nuevo audio"
           visible={this.state.visible}
