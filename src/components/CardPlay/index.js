@@ -52,20 +52,12 @@ import "./styles.css";
       <div className="like-dislike">
           <span onClick={handleLike}><img src="https://img.icons8.com/pastel-glyph/64/000000/facebook-like.png"/><small>{countLikes}</small></span>
           <span onClick={handleDislike}><img className="dislike" src="https://img.icons8.com/pastel-glyph/64/000000/facebook-like.png"/><small>{countDislikes}</small></span>
-        <EditAndShare/>
-        </div>
-        
-  
-        <audio
-          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
-          ref={audioPlayer}
-          onTimeUpdate={e => {
-            setProgress(
-              (audioPlayer.current.currentTime * 100) /
-                audioPlayer.current.duration
-            );
-          }}
-        />
+          <EditAndShare/>
+      </div>
+      <audio
+      src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+      ref={audioPlayer}
+      onTimeUpdate={e => { setProgress((audioPlayer.current.currentTime * 100) / audioPlayer.current.duration); }} />
       </div>
     );
 }

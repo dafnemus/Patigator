@@ -8,14 +8,13 @@ import './style.css';
 
 function EditAndShare() {
   const menu = <MenuDropdown/>
-
-    return(
+   return(
         <Dropdown overlay={menu} trigger={['click']}>
         <button className="ant-dropdown-link ellipsis" onClick={e => e.preventDefault()}>
         <Ellipsis/>
         </button>
         </Dropdown>
-    );
+  );
 };
 
 export default EditAndShare;
