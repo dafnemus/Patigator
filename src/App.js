@@ -1,10 +1,15 @@
-import React from 'react';
-
+import React from "react";
+import "./styles.css";
+import CardPlay from "./components/CardPlay";
 import Navbar from './navbar';
-import './App.css';
 
 function App() {
-  return <Navbar />;
+  return(
+    <article>
+    <Navbar />
+    <CardPlay />
+    </article>
+  )
 }
 
 export default App;
