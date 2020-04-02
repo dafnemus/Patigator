@@ -10,45 +10,46 @@ import "./styles.css";
     const [title, setTitle] = useState("Bad Bunny - Si la veo a tu mamá");
     const [countLikes, setCountLikes] = useState(0);
     const [countDislikes, setCountDislikes] = useState(0);
-  
+      
     useEffect(() => {
       console.log(progress, audioPlayer.current.duration);
     }, [progress]);
     
     const [isPlaying, setIsPlaying] = useState(false);
     const handleLike = (event) => {
-      setCountLikes(countLikes +1)
+      setCountLikes(countLikes + 1)
     }
     const handleDislike = (event) => {
-      setCountDislikes(countDislikes +1)
+      setCountDislikes(countDislikes + 1)
     }
   
     const toggleAudio = () => {
       if (isPlaying) {
         audioPlayer.current.pause();
         setIsPlaying(false);
-  } else {
+    } else {
         audioPlayer.current.play();
         setIsPlaying(true);
-      }
+    }    
   }
+
     return (
       <div className="card-container">
-        <img className="image" src="https://via.placeholder.com/80"></img>
-        <div className="audio-title">
-          <p>{title}</p>
-          <span className="icon-play">{isPlaying?(<PauseCircleTwoTone style={{fontSize:"25px"}}/>) : (<PlayCircleTwoTone style={{fontSize:"25px"}}/>)}</span>
-          <div className="audio">
-            <div className="player">
+        <img className="image" src="https://via.placeholder.com/70"></img>
+          <div className="audio-title">
+            <p className="title">{title}</p>
+            <span className="icon-play" onClick={toggleAudio}>{isPlaying?(<PauseCircleTwoTone style={{fontSize:"25px"}}/>) : (<PlayCircleTwoTone style={{fontSize:"25px"}}/>)}</span>
+              <div className="audio">
+              <div className="player">
             <div className="logo" onClick={toggleAudio}>
-            </div>
-          </div>
-          <div className="progress">
-            <div className="loading" style={{ width: `${progress}%` }} />
           </div>
         </div>
-      </div>
-      <div className="like-dislike">
+        <div className="progress">
+            <div className="loading" style={{ width: `${progress}%` }} />
+            </div>
+          </div>
+        </div>
+        <div className="like-dislike">
         <div className="container-icon">
           <span className="like" onClick={handleLike}>
           <LikeFilled />
