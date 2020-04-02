@@ -12,11 +12,10 @@
   margin-left: 30px;
   width: 100%;
   display: flex;
-  /* wrap para que se baje y  center para que se centre (? jaja  */
   align-items: center;
   flex-wrap: wrap;
 }
-/* le di width 100 para que ocupe todo el espacio y lo otro se baje */
+
 .title{
  min-width: 100%;
 }
@@ -26,9 +25,6 @@
   height: 100%;
   border-radius: 50px;
   background-color: rgb(66, 186, 241);
-}
-
-.loading {
 }
 
 b {
@@ -57,7 +53,7 @@ b {
   align-items: center;
   margin-right: 25px;
 }
-/* column para que este uno abajo del otro y center para que esten centrados horizontalmente  cuando usas column se centra horizontal con align */
+
 .container-icon {
   display: flex;
   flex-direction: column;
@@ -68,15 +64,26 @@ b {
   width: 30px;
   height: 30px;
 }
-/* lo subo un poquito para que queden alineados */
+
 .like {
-  transform: translateY(-3px);
   color: rgb(211, 211, 211);
+  transition: color .20s;
+  cursor: pointer;
+}
+
+.like:hover {
+  color:rgb(151, 151, 151);
 }
 
 .dislike {
   transform: rotate(0deg);
+  transition: color .20s;
   color: rgb(211, 211, 211);
+  cursor: pointer;
+}
+
+.dislike:hover {
+  color:rgb(151, 151, 151);
 }
 
 .image {
@@ -88,7 +95,12 @@ b {
   width: 20px;
   height: 25px;
   display: inline-block;
+  cursor: pointer;
 }
+
+/*.icon-play:hover  {
+  opacity: 1;
+}*/
 
 .More {
   transform: rotate(90deg);

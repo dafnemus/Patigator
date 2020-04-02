@@ -16,10 +16,10 @@ import "./styles.css";
     
     const [isPlaying, setIsPlaying] = useState(false);
     const handleLike = (event) => {
-      setCountLikes(countLikes +1)
+      setCountLikes(countLikes + 1)
     }
     const handleDislike = (event) => {
-      setCountDislikes(countDislikes +1)
+      setCountDislikes(countDislikes + 1)
     }
   
     const toggleAudio = () => {
@@ -36,9 +36,8 @@ import "./styles.css";
       <div className="card-container">
         <img className="image" src="https://via.placeholder.com/70"></img>
           <div className="audio-title">
-          {/* le di una clase al titulo para darle un ancho en el css */}
             <p className="title">{title}</p>
-            <span className="icon-play"onClick={toggleAudio}>{isPlaying?(<PauseCircleTwoTone style={{fontSize:"25px"}}/>) : (<PlayCircleTwoTone style={{fontSize:"25px"}}/>)}</span>
+            <span className="icon-play" onClick={toggleAudio}>{isPlaying?(<PauseCircleTwoTone style={{fontSize:"25px"}}/>) : (<PlayCircleTwoTone style={{fontSize:"25px"}}/>)}</span>
               <div className="audio">
               <div className="player">
             <div className="logo" onClick={toggleAudio}>
@@ -50,14 +49,13 @@ import "./styles.css";
           </div>
         </div>
         <div className="like-dislike">
-      {/* meti cada icono con el contador en un contenedor asi le das un display: flex y lo direccionar como column para que quede uno abajo del otro y no uno al lado medio rancio */}
         <div className="container-icon">
           <span className="like" onClick={handleLike}>
           <LikeFilled />
           </span>
           <span>{countLikes}</span>
         </div>
-          
+
         <div className="container-icon">
           <span className="dislike" onClick={handleDislike}>
           <DislikeFilled />
