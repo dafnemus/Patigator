@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
-import { PlayCircleTwoTone, PauseCircleTwoTone } from '@ant-design/icons';
+import { PlayCircleTwoTone, PauseCircleTwoTone, DislikeFilled, LikeFilled } from '@ant-design/icons';
 import EditAndShare from "../edit-and-share";
 import ImageAudio from '../ImageAudio'
+import audioBadBunny from "../Audio/Bad Bunny - Si la veo a tu mama.mp3";
 import "./styles.css";
 
 const CardPlay = (props) => {
@@ -14,15 +15,9 @@ const CardPlay = (props) => {
   useEffect(() => {
     console.log(progress, audioPlayer.current.duration);
   }, [progress]);
-
   const [isPlaying, setIsPlaying] = useState(false);
-  const handleLike = (event) => {
-    setCountLikes(countLikes + 1)
-  }
-  const handleDislike = (event) => {
-    setCountDislikes(countDislikes + 1)
-  }
-
+  const handleLike = (event) => { setCountLikes(countLikes + 1) };
+  const handleDislike = (event) => { setCountDislikes(countDislikes + 1) };
   const toggleAudio = () => {
     if (isPlaying) {
       audioPlayer.current.pause();
@@ -45,27 +40,27 @@ const CardPlay = (props) => {
             </div>
           </div>
           <div className="progress">
-            <div className="loading" style={{ width: `${progress}%` }} />
-          </div>
+            <div className="loading" style={{ width: `${progress}%` }} /></div>
         </div>
       </div>
-
       <div className="like-dislike">
-        <span onClick={handleLike}><img src="https://img.icons8.com/pastel-glyph/64/000000/facebook-like.png" /><small>{countLikes}</small></span>
-        <span onClick={handleDislike}><img className="dislike" src="https://img.icons8.com/pastel-glyph/64/000000/facebook-like.png" /><small>{countDislikes}</small></span>
-        <EditAndShare />
+        <div className="container-icon">
+          <span className="like" onClick={handleLike}>
+            <LikeFilled />
+          </span>
+          <span>{countLikes}</span>
+        </div>
+        <div className="container-icon">
+          <span className="dislike" onClick={handleDislike}>
+            <DislikeFilled />
+          </span>
+          <span>{countDislikes}</span>
+        </div>
       </div>
-
-   <audio
-        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
-        ref={audioPlayer}
-        onTimeUpdate={e => {
-          setProgress(
-            (audioPlayer.current.currentTime * 100) /
-            audioPlayer.current.duration
-          );
-        }}
-      />
+      <EditAndShare />
+      <audio src={audioBadBunny} ref={audioPlayer} onTimeUpdate={e => {
+        setProgress((audioPlayer.current.currentTime * 100) / audioPlayer.current.duration);
+      }} />
     </div>
   );
 }
