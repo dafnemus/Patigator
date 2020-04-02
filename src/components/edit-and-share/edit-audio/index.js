@@ -27,13 +27,13 @@ class EditAudio extends React.Component {
           cancelText="Cancelar"
           zIndex={2}>
           <ChangeImage />
-          <Divider style={{ height: '0px', margin: '5px' }} />
+          <Divider style={{ height: '0px', margin: '10px' }} />
           <label> Nombre </label>
           <Input />
-          <Divider style={{ height: '0px', margin: '5px' }} />
+          <Divider style={{ height: '0px', margin: '30px' }} />
           <label> Categorias </label>
           <InputChange zIndex={3} />
-          <Divider style={{ height: '0px', margin: '8px' }} />
+          <Divider style={{ height: '0px', margin: '20px' }} />
           <ChangeAudio />
         </Modal>
       </div>

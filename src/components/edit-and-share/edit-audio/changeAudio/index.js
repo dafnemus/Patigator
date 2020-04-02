@@ -1,5 +1,6 @@
 import React from 'react';
-import UrlAudio from './UrlAudio';
+import { Button } from 'antd';
+import { CloseOutlined, PaperClipOutlined } from '@ant-design/icons';
 import UploadAudio from './UploadAudio';
 import 'antd/dist/antd.css';
 
@@ -7,13 +8,16 @@ class ChangeAudio extends React.Component {
   state = {
     change: false
   };
-  handleChange = () => this.setState({ change: true });
+  handleChange = () => this.setState({ change: true })
   render() {
-    const { Audio } = this.state;
     return (
       <div >
-        <UrlAudio change={this.state} onClick={this.handleChange} />
-        {Audio ? <UploadAudio /> : <UrlAudio />}
+        <Button type="link" change={this.state} onClick={this.handleChange}  >
+          <PaperClipOutlined style={{ color: 'rgba(0, 0, 0, 0.65)' }} />
+          Url-Audio
+          <CloseOutlined style={{ color: 'rgba(0, 0, 0, 0.65)' }} />
+        </Button>
+        {this.state.change === true && <UploadAudio />}
       </div>
     );
   }

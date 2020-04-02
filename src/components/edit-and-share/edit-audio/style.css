@@ -1,13 +1,17 @@
-.open-modal{
-    color: #000000a6;
-    margin-left: -13px;
+.open-modal {
+  color: #000000a6;
+  margin-left: -13px;
 };
 
-.icon-edit{
-    margin-right: 4px;
+.icon-edit {
+  margin-right: 4px;
 };
 
-.divider{
-    height: 0px;
-    margin: 5px;
+.divider {
+  height: 0px;
+  margin: 5px;
+};
+
+.ant-modal-header {
+  border: none;
 }
