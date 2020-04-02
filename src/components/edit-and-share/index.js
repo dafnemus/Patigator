@@ -7,13 +7,13 @@ import 'antd/dist/antd.css';
 import './style.css';
 
 function EditAndShare() {
-  const menu = <MenuDropdown/>
-   return(
-        <Dropdown overlay={menu} trigger={['click']}>
-        <button className="ant-dropdown-link ellipsis" onClick={e => e.preventDefault()}>
-        <Ellipsis/>
-        </button>
-        </Dropdown>
+  const menu = <MenuDropdown />
+  return (
+    <Dropdown overlay={menu} trigger={['click']}>
+      <button className="ant-dropdown-link ellipsis" onClick={e => e.preventDefault()}>
+        <Ellipsis />
+      </button>
+    </Dropdown>
   );
 };
 

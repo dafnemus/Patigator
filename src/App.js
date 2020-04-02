@@ -1,14 +1,14 @@
 import React from "react";
-import "./styles.css";
 import CardPlay from "./components/CardPlay";
+import "./styles.css";
 
 function App() {
   return(
-    <article>
+  <article>
     <CardPlay />
     <CardPlay />
-    </article>
-  )
-}
+  </article>
+  );
+};
 
 export default App;
