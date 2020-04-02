@@ -29,8 +29,7 @@ import "./styles.css";
     } else {
         audioPlayer.current.play();
         setIsPlaying(true);
-    }
-      
+    }    
   }
 
     return (
@@ -39,7 +38,7 @@ import "./styles.css";
           <div className="audio-title">
           {/* le di una clase al titulo para darle un ancho en el css */}
             <p className="title">{title}</p>
-            <span className="icon-play">{isPlaying?(<PauseCircleTwoTone style={{fontSize:"25px"}}/>) : (<PlayCircleTwoTone style={{fontSize:"25px"}}/>)}</span>
+            <span className="icon-play"onClick={toggleAudio}>{isPlaying?(<PauseCircleTwoTone style={{fontSize:"25px"}}/>) : (<PlayCircleTwoTone style={{fontSize:"25px"}}/>)}</span>
               <div className="audio">
               <div className="player">
             <div className="logo" onClick={toggleAudio}>
