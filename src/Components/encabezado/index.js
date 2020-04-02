@@ -5,7 +5,7 @@ import './styles.css';
 
 function Encabezado() {
   return (
-    <header>
+    <header className="header">
       <Logo className="logo" />
       <h1>Patigator</h1>
     </header>

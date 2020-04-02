@@ -37,7 +37,6 @@ class UploadSong extends React.Component {
         >
           <p>Upload</p>
         </Button>
-
         <Modal
           title="Subir nuevo audio"
           visible={this.state.visible}
