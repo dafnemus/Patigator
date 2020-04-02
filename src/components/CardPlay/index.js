@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { PlayCircleTwoTone, PauseCircleTwoTone,LikeFilled, DislikeFilled, MoreOutlined } from '@ant-design/icons';
+import audioBadBunny from "../Audio/Bad Bunny - Si la veo a tu mama.mp3";
 import "./styles.css";
 
     const CardPlay = (props) => {
@@ -68,9 +69,9 @@ import "./styles.css";
       <div className="More">
         <span><MoreOutlined /></span>
       </div>
-
+      
       <audio
-        src="https://www.youtube.com/watch?v=3lL8oeDO2ZM"
+        src={audioBadBunny}
         ref={audioPlayer}
         onTimeUpdate={e => {
           setProgress(
