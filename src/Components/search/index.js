@@ -9,7 +9,7 @@ function Buscador() {
     <Search
       size="large"
       placeholder=" "
-      onSearch={value => console.log(value)}
+      onSearch={value => (value)}
     />
   );
 }
