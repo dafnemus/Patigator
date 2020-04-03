@@ -1,0 +1,16 @@
+.header {
+  background-color: var(--main-bg-color) ;
+  margin: 0;
+  padding: .5em;
+}
+
+.header > h1 {
+  display: inline;
+  font-weight: bold;
+  color: white;
+}
+
+.logo {
+  margin: 0 1em;
+  width: 35px;
+}
