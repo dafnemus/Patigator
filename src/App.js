@@ -10,14 +10,14 @@ import 'antd/dist/antd.css';
 function App() {
   return (
     <div>
-      <Row gutter={[16, 40]}>
+      <Row gutter={[0, 40]}>
         <Col span={24}> <Encabezado /> </Col>
       </Row>
-      <Row gutter={[16, 40]} justify="end">
+      <Row gutter={[0, 40]} justify="end">
         <Col span={4}> <Buscador /> </Col>
-        <Col span={3}> <UploadSong /> </Col>
+        <Col span={3}> <UploadSong/> </Col>
       </Row>
-      <Navbar />;
+      <Navbar />
     </div>
   );
 }

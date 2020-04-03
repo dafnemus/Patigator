@@ -1,4 +1,18 @@
-.avatar-uploader > .ant-upload {
-  width: 128px;
-  height: 128px;
+.ant-upload-text{
+  font-size: .8em;
 }
+
+.avatar-uploader{
+  font-size: 1.5em;
+}
+
+.button-upload-container{
+  font-size: 1em;
+}
+
+.button-upload-container:first-of-type svg{
+  font-size: 1.6em;
+  color: rgb(161, 161, 161);
+  margin-bottom: .2em;
+}
+

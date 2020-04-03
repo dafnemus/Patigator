@@ -43,6 +43,7 @@ class UploadSong extends React.Component {
         </Button>
         <Modal
           title="Subir nuevo audio"
+          id="container-modal"
           visible={this.state.visible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}

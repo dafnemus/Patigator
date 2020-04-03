@@ -45,9 +45,9 @@ class Avatar extends React.Component {
 
   render() {
     const uploadButton = (
-      <div>
+      <div className="button-upload-container">
         {this.state.loading ? <LoadingOutlined /> : <PlusOutlined />}
-        <div className="ant-upload-text">Upload</div>
+        <div className="ant-upload-text">Cargar imagen</div>
       </div>
     );
     const { imageUrl } = this.state;
