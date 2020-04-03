@@ -8,7 +8,9 @@ class ChangeAudio extends React.Component {
   state = {
     change: false
   };
-  handleChange = () => this.setState({ change: true })
+
+  handleChange = () => this.setState({ change: true });
+  
   render() {
     return (
       <div >

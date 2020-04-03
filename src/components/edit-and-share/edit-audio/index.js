@@ -17,7 +17,9 @@ class EditAudio extends React.Component {
   render() {
     return (
       <div>
-        <Button className="open-modal" type="link" onClick={this.showModal}><EditOutlined className="icon-edit" /> Editar </Button>
+        <Button className="open-modal" type="link" onClick={this.showModal}>
+          <EditOutlined className="icon-edit" /> Editar
+        </Button>
         <Modal
           title="Editar Audio"
           visible={this.state.visible}

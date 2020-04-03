@@ -35,9 +35,7 @@ const CardPlay = (props) => {
         <span className="icon-play">{isPlaying ? (<PauseCircleTwoTone style={{ fontSize: "25px" }} />) : (<PlayCircleTwoTone style={{ fontSize: "25px" }} />)}</span>
         <div className="audio">
           <div className="player">
-            <div className="logo" onClick={toggleAudio}>
-
-            </div>
+            <div className="logo" onClick={toggleAudio}/>
           </div>
           <div className="progress">
             <div className="loading" style={{ width: `${progress}%` }} /></div>

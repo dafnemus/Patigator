@@ -3,11 +3,9 @@ import { Upload, Button } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 
-
-
 class UploadAudio extends React.Component {
   state = {};
-
+  
   handleChange = info => {
     let fileList = [...info.fileList];
     fileList = fileList.slice(-1);
@@ -17,6 +15,7 @@ class UploadAudio extends React.Component {
     });
     this.setState({ fileList });
   };
+
   render() {
     const props = {
       action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
