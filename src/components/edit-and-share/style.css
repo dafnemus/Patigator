@@ -1,9 +1,12 @@
 .menu-dropdown {
-  border: 1px solid var(--main-bg-color);
   background: var(--main-bg-color);
+  border: 2px solid var(--main-bg-color);
   padding-left: 0px;
 };
 
+.item{
+  border: 1px solid;
+}
 .item:hover {
   color: var(--main-color);
 };
