@@ -12,7 +12,6 @@ for (let i = 10; i < 36; i++) {
 }
 
 function handleChange(value) {
-  console.log(`selected ${value}`);
 }
 
 let index = 0;
@@ -30,7 +29,6 @@ class Category extends React.Component {
   };
 
   addItem = () => {
-    console.log('addItem');
     const { items, name } = this.state;
     this.setState({
       items: [...items, name || `New item ${index++}`],
@@ -42,7 +40,7 @@ class Category extends React.Component {
     const { items, name } = this.state;
 
     return (
-      <Select mode="tags" style={{ width: '100%' }} onChange={handleChange} tokenSeparators={[',']}
+      <Select  mode="tags" style={{ width: '100%' }} className="margen" onChange={handleChange} tokenSeparators={[',']}
         placeholder="Seleccionar"
         dropdownRender={menu => (
           <div>

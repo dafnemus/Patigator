@@ -18,14 +18,14 @@
   height: 22px;
 }
 
-span.avatar-uploader.ant-upload-picture-card-wrapper{
+span.avatar-uploader.ant-upload-picture-card-wrapper {
 
   display: flex;
   align-content: center;
   justify-content: center;
 }
 
-.ant-modal{
+.ant-modal {
   width: 490px !important;
   max-width: 37%;
   -webkit-box-shadow: 0px 0px 4px 1px rgba(83, 83, 83, 0.616);
@@ -34,20 +34,25 @@ span.avatar-uploader.ant-upload-picture-card-wrapper{
   padding-bottom: 0;
 }
 
-.ant-modal-mask{
+.ant-modal-mask {
   background-color: rgba(0, 0, 0, 0.31);
 }
-.ant-modal-header{
+.ant-modal-header {
   padding: 2em 3em;
   border-bottom: none;
 }
   
-.ant-modal-title{
+.ant-modal-title {
   font-size: 1.3em;
   text-shadow: 0 0 0;
   color: #676767;
 }
 
-.ant-modal-body{
+.ant-modal-body {
   padding: 24px 3em;
+}
+
+.margen-modal {
+  margin: 8px 0px;
+  margin-bottom: 20px;
 }

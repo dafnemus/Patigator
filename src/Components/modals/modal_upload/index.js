@@ -51,9 +51,9 @@ class UploadSong extends React.Component {
           cancelText="Cancelar"
         >
           <Avatar />
-          <p>Nombre</p>
-          <Input placeholder="Escribir nombre del audio" />
-          <p>Categoría</p>
+          <label>Nombre</label>
+          <Input className="margen-modal" placeholder="Escribir nombre del audio" />
+          <label>Categoría</label>
           <Category />
           <MyUpload />
         </Modal>

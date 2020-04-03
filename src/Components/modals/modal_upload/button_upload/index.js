@@ -5,7 +5,7 @@ import 'antd/dist/antd.css';
 
 class MyUpload extends React.Component {
   state = {
-  };
+  }
 
   handleChange = info => {
     let fileList = [...info.fileList];
@@ -31,10 +31,10 @@ class MyUpload extends React.Component {
       action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
       onChange: this.handleChange,
       multiple: true,
-    };
+    }
     return (
       <Upload {...props} fileList={this.state.fileList}>
-        <Button>
+        <Button className="margen" >
           <UploadOutlined /> Subir audio
         </Button>
       </Upload>
