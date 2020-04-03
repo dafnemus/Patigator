@@ -22,20 +22,19 @@ class ChangeImage extends React.Component {
   state = {
     loading: false,
   };
+  uploadButton=<div><ImageAudio /></div>
 
   handleChange = info => {
     if (info.file.status === 'uploading') {
       this.setState({ loading: true });
       return;
     }
-    if (info.file.status === 'done') { 
+    if (info.file.status === 'done') {
       getBase64(info.file.originFileObj, imageUrl =>
         this.setState({ imageUrl, loading: false }));
     }
   };
   render() {
-    const uploadButton = (<div>{this.state.loading ? <ImageAudio /> : <ImageAudio />}</div>
-    );
     const { imageUrl } = this.state;
     return (
       <Upload
@@ -46,7 +45,7 @@ class ChangeImage extends React.Component {
         action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
         beforeUpload={beforeUpload}
         onChange={this.handleChange}>
-        {imageUrl ? <img src={imageUrl} alt="avatar" style={{ width: '100%' }} /> : uploadButton}
+        {imageUrl ? <img src={imageUrl} alt="avatar" style={{ width: '100%' }} /> : this.uploadButton}
       </Upload>
     );
   }

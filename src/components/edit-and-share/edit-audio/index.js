@@ -6,6 +6,7 @@ import ChangeImage from './changeImage';
 import ChangeAudio from './changeAudio';
 import 'antd/dist/antd.css';
 import './style.css';
+import '../../Colorsmodal/style.css'
 
 class EditAudio extends React.Component {
   state = { visible: false };

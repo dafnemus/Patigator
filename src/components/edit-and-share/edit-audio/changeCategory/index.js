@@ -5,8 +5,8 @@ import 'antd/dist/antd.css';
 function InputChange() {
   const Option = Select;
   const children = [];
-  for (let i = 10; i < 36; i++) {
-    children.push(<Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>);
+  for (let i = 10; i < 20 ; i++) {
+    children.push(<Option key={i.toString(20) + i}>{i.toString(20) + i}</Option>);
   }
   return (
     <Select

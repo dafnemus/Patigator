@@ -5,6 +5,7 @@ import MenuDropdown from './menudropdown';
 
 import 'antd/dist/antd.css';
 import './style.css';
+import '../ColorsDropdown/style.css';
 
 class EditAndShare extends React.Component {
   render() {
@@ -12,6 +13,7 @@ class EditAndShare extends React.Component {
     return (
       <Dropdown overlay={menu} zIndex={2} >
         <button className="ant-dropdown-link"
+          style={{ background: 'transparent', border: 'none', fontSize: '30px' }}
           onClick={e => e.preventDefault()}>
           <EllipsisOutlined />
         </button>
