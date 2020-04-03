@@ -3,6 +3,7 @@ import { Row, Col } from 'antd';
 import Buscador from './Components/search/';
 import Encabezado from './Components/encabezado/';
 import UploadSong from './Components/modals/modal_upload/';
+import CardPlay from "./components/CardPlay";
 import Navbar from './navbar';
 import './App.css';
 import 'antd/dist/antd.css';
@@ -17,7 +18,10 @@ function App() {
         <Col span={4}> <Buscador /> </Col>
         <Col span={3}> <UploadSong/> </Col>
       </Row>
-      <Navbar />
+      <article>
+        <Navbar />
+        <CardPlay />
+      </article>
     </div>
   );
 }
