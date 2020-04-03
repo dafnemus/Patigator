@@ -18,8 +18,8 @@ function App() {
         <Col span={4}> <Buscador /> </Col>
         <Col span={3}> <UploadSong/> </Col>
       </Row>
+      <Navbar />
       <article>
-        <Navbar />
         <CardPlay />
       </article>
     </div>

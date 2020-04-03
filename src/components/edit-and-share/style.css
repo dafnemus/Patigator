@@ -1,0 +1,9 @@
+.menu-dropdown {
+  border: 1px solid var(--main-bg-color);
+  background: var(--main-bg-color);
+  padding-left: 0px;
+};
+
+.item:hover {
+  color: var(--main-color);
+};
