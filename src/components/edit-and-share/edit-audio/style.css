@@ -1,5 +1,8 @@
+:root {
+ --main-color: #000000a6;
+};
 .open-modal {
-  color: #000000a6;
+  color: var(--main-color);
   margin-left: -13px;
 };
 

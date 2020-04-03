@@ -1,14 +1,20 @@
+:root {
+  --main-color: rgba(4, 105, 221, 0.719);
+  --main-bg-color: white;
+};
+
 .ant-dropdown-link {
   background: transparent;
   border: none;
   font-size: 30px;
-}
+};
+
 .menu-dropdown {
-  border: 1px solid white;
-  background: white;
+  border: 1px solid var(--main-bg-color);
+  background: var(--main-bg-color);
   padding-left: 0px;
 };
 
 .item:hover {
-  color: rgba(4, 105, 221, 0.719);
+  color: var(--main-color);
 };
