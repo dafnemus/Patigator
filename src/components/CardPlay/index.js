@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { PlayCircleTwoTone, PauseCircleTwoTone, DislikeFilled, LikeFilled } from '@ant-design/icons';
 import EditAndShare from "../edit-and-share";
+import ImageAudio from '../ImageAudio'
 import audioBadBunny from "../Audio/Bad Bunny - Si la veo a tu mama.mp3";
 import "./styles.css";
 
@@ -28,14 +29,13 @@ const CardPlay = (props) => {
   }
   return (
     <div className="card-container">
-      <img className="image" src="https://via.placeholder.com/70"></img>
+      <ImageAudio />
       <div className="audio-title">
-        <p className="title">{title}</p>
-        <span className="icon-play" onClick={toggleAudio}>{isPlaying ? (<PauseCircleTwoTone style={{ fontSize: "25px" }} />) : (<PlayCircleTwoTone style={{ fontSize: "25px" }} />)}</span>
+        <p>{title}</p>
+        <span className="icon-play">{isPlaying ? (<PauseCircleTwoTone style={{ fontSize: "25px" }} />) : (<PlayCircleTwoTone style={{ fontSize: "25px" }} />)}</span>
         <div className="audio">
           <div className="player">
-            <div className="logo" onClick={toggleAudio}>
-            </div>
+            <div className="logo" onClick={toggleAudio}/>
           </div>
           <div className="progress">
             <div className="loading" style={{ width: `${progress}%` }} /></div>
