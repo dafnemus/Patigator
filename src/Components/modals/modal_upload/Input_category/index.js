@@ -40,7 +40,7 @@ class Category extends React.Component {
     const { items, name } = this.state;
 
     return (
-      <Select  mode="tags" style={{ width: '100%' }} className="margen" onChange={handleChange} tokenSeparators={[',']}
+      <Select mode="tags" style={{ width: '100%' }} className="margen" onChange={handleChange} tokenSeparators={[',']}
         placeholder="Seleccionar"
         dropdownRender={menu => (
           <div>
@@ -57,7 +57,7 @@ class Category extends React.Component {
         )}
       > {children}
         {items.map(item => (
-          <Option key={item} > {item}</Option>
+          <Option key={item}>{item}</Option>
         ))}
       </Select>
     );

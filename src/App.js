@@ -16,7 +16,7 @@ function App() {
       </Row>
       <Row gutter={[0, 40]} justify="end">
         <Col span={4}> <Buscador /> </Col>
-        <Col span={3}> <UploadSong/> </Col>
+        <Col span={3}> <UploadSong /> </Col>
       </Row>
       <Navbar />
       <article>

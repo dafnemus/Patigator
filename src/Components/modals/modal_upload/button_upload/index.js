@@ -33,7 +33,7 @@ class MyUpload extends React.Component {
       multiple: true,
     }
     return (
-      <Upload {...props} fileList={this.state.fileList}>
+      <Upload {...props} fileList={this.state.fileList} >
         <Button className="margen" >
           <UploadOutlined /> Subir audio
         </Button>

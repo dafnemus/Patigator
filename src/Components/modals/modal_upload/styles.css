@@ -19,7 +19,6 @@
 }
 
 span.avatar-uploader.ant-upload-picture-card-wrapper {
-
   display: flex;
   align-content: center;
   justify-content: center;
@@ -37,6 +36,7 @@ span.avatar-uploader.ant-upload-picture-card-wrapper {
 .ant-modal-mask {
   background-color: rgba(0, 0, 0, 0.31);
 }
+
 .ant-modal-header {
   padding: 2em 3em;
   border-bottom: none;
