@@ -11,7 +11,7 @@ class EditAndShare extends React.Component {
   render() {
     const menu = <MenuDropdown />
     return (
-      <Dropdown overlay={menu} zIndex={2} >
+      <Dropdown overlay={menu} zIndex={2} style={{border: '1px'}}>
         <button className="ant-dropdown-link"
           style={{ background: 'transparent', border: 'none', fontSize: '25px' }}
           onClick={e => e.preventDefault()}>

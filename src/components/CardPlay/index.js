@@ -32,13 +32,15 @@ const CardPlay = (props) => {
       <ImageAudio />
       <div className="audio-title">
         <p>{title}</p>
+        <div className="container-audio" onClick={toggleAudio}>
         <span className="icon-play">{isPlaying ? (<PauseCircleTwoTone style={{ fontSize: "25px" }} />) : (<PlayCircleTwoTone style={{ fontSize: "25px" }} />)}</span>
         <div className="audio">
           <div className="player">
-            <div className="logo" onClick={toggleAudio}/>
+            <div className="logo" />
           </div>
           <div className="progress">
             <div className="loading" style={{ width: `${progress}%` }} /></div>
+        </div>
         </div>
       </div>
       <div className="like-dislike">
@@ -48,6 +50,7 @@ const CardPlay = (props) => {
           </span>
           <span>{countLikes}</span>
         </div>
+      
         <div className="container-icon">
           <span className="dislike" onClick={handleDislike}>
             <DislikeFilled />
