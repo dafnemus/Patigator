@@ -1,3 +1,6 @@
-import api from "./api.js";
+/* eslint-disable import/extensions */
+import api from './api.js';
 
-export const getRepro = title => api.get(`/reproductor?title_like=${title}`);
+export const getRepro = (id) => api.get(`/audios=${id}`);
+
+export const getAllRepro = () => api.get('/audios');
