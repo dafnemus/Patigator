@@ -1,5 +1,5 @@
+/* eslint-disable comma-dangle */
 /* eslint-disable react/jsx-handler-names */
-/* eslint-disable prettier/prettier */
 import React from 'react';
 import { Modal, Button } from 'antd';
 
@@ -12,19 +12,19 @@ class UploadSong extends React.Component {
 
   showModal = () => {
     this.setState({
-      visible: true
+      visible: true,
     });
   };
 
   handleOk = (e) => {
     this.setState({
-      visible: false
+      visible: false,
     });
   };
 
   handleCancel = (e) => {
     this.setState({
-      visible: false
+      visible: false,
     });
   };
 

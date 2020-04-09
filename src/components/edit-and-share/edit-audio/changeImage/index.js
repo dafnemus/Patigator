@@ -1,5 +1,5 @@
+/* eslint-disable comma-dangle */
 /* eslint-disable react/forbid-dom-props */
-/* eslint-disable prettier/prettier */
 /* eslint-disable react/no-unused-state */
 /* eslint-disable no-magic-numbers */
 import React from 'react';
@@ -29,7 +29,7 @@ function beforeUpload(file) {
 
 class ChangeImage extends React.Component {
   state = {
-    loading: false
+    loading: false,
   };
 
   uploadButton = (

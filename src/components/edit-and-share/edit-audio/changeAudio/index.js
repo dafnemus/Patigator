@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+/* eslint-disable comma-dangle */
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { Button } from 'antd';
@@ -9,7 +9,7 @@ import 'antd/dist/antd.css';
 
 class ChangeAudio extends React.Component {
   state = {
-    change: false
+    change: false,
   };
 
   handleChange = () => this.setState({ change: true });

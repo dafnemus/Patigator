@@ -1,5 +1,5 @@
+/* eslint-disable comma-dangle */
 /* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable prettier/prettier */
 import React from 'react';
 import { Upload, Button } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
@@ -24,7 +24,7 @@ class UploadAudio extends React.Component {
     const props = {
       action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
       onChange: this.handleChange,
-      multiple: true
+      multiple: true,
     };
     return (
       <Upload {...props} fileList={this.state.fileList} zIndex={4}>
