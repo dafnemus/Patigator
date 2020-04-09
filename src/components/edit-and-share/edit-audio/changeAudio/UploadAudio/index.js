@@ -1,3 +1,5 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import { Upload, Button } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
@@ -5,12 +7,14 @@ import 'antd/dist/antd.css';
 
 class UploadAudio extends React.Component {
   state = {};
-  
-  handleChange = info => {
+
+  handleChange = (info) => {
     let fileList = [...info.fileList];
     fileList = fileList.slice(-1);
-    fileList = fileList.map(file => {
-      if (file.response) { file.url = file.response.url; };
+    fileList = fileList.map((file) => {
+      if (file.response) {
+        file.url = file.response.url;
+      }
       return file;
     });
     this.setState({ fileList });

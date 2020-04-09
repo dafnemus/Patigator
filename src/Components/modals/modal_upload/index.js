@@ -1,5 +1,8 @@
+/* eslint-disable react/jsx-handler-names */
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import { Modal, Button } from 'antd';
+
 import { ReactComponent as Logo } from './img/bg-upload.svg';
 import 'antd/dist/antd.css';
 import './styles.css';
@@ -9,19 +12,19 @@ class UploadSong extends React.Component {
 
   showModal = () => {
     this.setState({
-      visible: true,
+      visible: true
     });
   };
 
-  handleOk = e => {
+  handleOk = (e) => {
     this.setState({
-      visible: false,
+      visible: false
     });
   };
 
-  handleCancel = e => {
+  handleCancel = (e) => {
     this.setState({
-      visible: false,
+      visible: false
     });
   };
 
@@ -44,8 +47,7 @@ class UploadSong extends React.Component {
           onCancel={this.handleCancel}
           okText="Aceptar"
           cancelText="Cancelar"
-        >
-        </Modal>
+        />
       </div>
     );
   }

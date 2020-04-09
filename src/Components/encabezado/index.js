@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { ReactComponent as Logo } from './img/patigator_logo.svg';
 import 'antd/dist/antd.css';
 import './Colors/style.css';

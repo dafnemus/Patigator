@@ -5,13 +5,7 @@ import 'antd/dist/antd.css';
 const { Search } = Input;
 
 function Buscador() {
-  return (
-    <Search
-      size="large"
-      placeholder=" "
-      onSearch={value => {}}
-    />
-  );
+  return <Search size="large" placeholder=" " onSearch={(value) => {}} />;
 }
 
 export default Buscador;
