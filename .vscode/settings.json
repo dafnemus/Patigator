@@ -1,7 +1,4 @@
 {
-<<<<<<< HEAD
-    "editor.tabSize": 2,
-    "editor.detectIndentation": false
-=======
->>>>>>> ac113197ff98818b99c374f97b19f6b3d10d11de
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false
 }
