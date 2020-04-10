@@ -1,8 +1,8 @@
 import React from 'react';
 import { Row, Col } from 'antd';
-import Buscador from './Components/search/';
-import Encabezado from './Components/encabezado/';
-import UploadSong from './Components/modals/modal_upload/';
+import Buscador from './components/search/';
+import Encabezado from './components/encabezado/';
+import UploadSong from './components/modals/modal_upload/';
 import CardPlay from "./components/CardPlay";
 import Navbar from './navbar';
 import './App.css';
