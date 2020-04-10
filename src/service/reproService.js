@@ -1,3 +1,5 @@
 import api from "./api.js";
 
-export const getRepro = title => api.get(`/reproductor?title_like=${title}`);
+export const fetchRepro = id => api.get(`/api/audios=${id}`);
+
+export const fetchAllRepro = () => api.get(`/api/audios`);
