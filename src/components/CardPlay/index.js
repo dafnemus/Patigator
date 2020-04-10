@@ -1,3 +1,6 @@
+/* eslint-disable no-magic-numbers */
+/* eslint-disable react/forbid-dom-props */
+/* eslint-disable import/no-extraneous-dependencies */
 import React, { useState, useRef, useEffect } from 'react';
 import { PlayCircleTwoTone, PauseCircleTwoTone, DislikeFilled, LikeFilled } from '@ant-design/icons';
 

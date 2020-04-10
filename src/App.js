@@ -7,6 +7,7 @@ import Encabezado from './Components/encabezado';
 import UploadSong from './Components/modals/modal_upload';
 import CardPlay from './components/CardPlay';
 import Navbar from './navbar';
+import ListarAudios from './listarAudios';
 import './App.css';
 import 'antd/dist/antd.css';
 
@@ -33,6 +34,7 @@ function App() {
       <article>
         <CardPlay />
       </article>
+      <ListarAudios />
     </div>
   );
 }
