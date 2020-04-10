@@ -8,7 +8,7 @@ import "./styles.css";
 const CardPlay = (props) => {
   const audioPlayer = useRef(null);
   const [progress, setProgress] = useState(80);
-  const [title, setTitle] = useState("Bad Bunny - Si la veo a tu mamá");
+  const [title] = useState("Bad Bunny - Si la veo a tu mamá");
   const [countLikes, setCountLikes] = useState(0);
   const [countDislikes, setCountDislikes] = useState(0);
 
