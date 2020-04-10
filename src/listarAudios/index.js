@@ -17,6 +17,7 @@ class ListarAudios extends React.Component {
 
   readSong = async () => {
     const response = await fetchAllRepro();
+    console.log(response);
     this.setState({ repro: response.data.results });
   };
 
@@ -25,7 +26,7 @@ class ListarAudios extends React.Component {
       <div>
         {this.state.repro.map((elem) => (
           <div>
-            <CardPlay elem={elem} />
+            <h1>{elem.name}</h1>
           </div>
         ))}
       </div>
