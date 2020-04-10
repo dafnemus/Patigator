@@ -33,8 +33,8 @@ function App() {
       <Navbar />
       <article>
         <CardPlay />
+        <ListarAudios />
       </article>
-      <ListarAudios />
     </div>
   );
 }

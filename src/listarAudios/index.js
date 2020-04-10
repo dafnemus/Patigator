@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable comma-dangle */
 /* eslint-disable import/extensions */
 /* eslint-disable react/jsx-key */
@@ -18,17 +19,15 @@ class ListarAudios extends React.Component {
   readSong = async () => {
     const response = await fetchAllRepro();
     console.log(response);
-    this.setState({ repro: response.data.results });
+    this.setState({ repro: response.data });
   };
 
   render() {
     return (
       <div>
-        {this.state.repro.map((elem) => (
-          <div>
-            <h1>{elem.name}</h1>
-          </div>
-        ))}
+        <div>
+          <h1>{this.state.repro}</h1>
+        </div>
       </div>
     );
   }
