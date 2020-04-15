@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CardPlay from "../components/CardPlay";
 import { Row, Col } from 'antd';
-//import { fetchAllRepro } from '../service/reproService.js';
+import { getAllAudio } from '../service/reproService.js';
 
 export default class Example extends Component {
 
@@ -16,16 +16,17 @@ export default class Example extends Component {
 
   componentDidMount(){
 
-    var requestOptions = {
-      method: 'GET'
-    };
-    
-    fetch(/*url de la api*/"/api/audios", requestOptions)
-    
-      .then(response => response.json())
-      .then(json => { this.setState({ isLoaded: true, data: json}); } )
-      .catch(error => console.log('error', error));
+      this.ListAudios();
   };
+
+  ListAudios = async () => {
+    const response = await getAllAudio();
+    this.setState({ 
+      data: response.data,
+      isLoaded: !!this.state.data
+    });
+  };
+
 
   render() {
 

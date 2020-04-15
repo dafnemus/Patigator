@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import ImageAudio from '../ImageAudio'
 import { Slider } from 'antd'
 import { ReactComponent as Like } from './img/Like.svg'
 import { ReactComponent as Dislike } from './img/Dislike.svg'
@@ -26,11 +27,12 @@ const CardPlay = (props) => {
     setCountDislikes(player.thumbsDown)
     setCover(player.cover)
     setAudioSource(player.audioSource)
+    setProgress(0);
 
   }, [player, title, countLikes, countDislikes, cover,]);
   
-  const handleLike = (e) => {setCountLikes(countLikes + 1) };
-  const handleDislike = (e) => {setCountDislikes(countDislikes + 1) };
+  const handleLike = (e) => {setCountLikes(player.thumbsUp + 1) };
+  const handleDislike = (e) => {setCountDislikes(player.thumbsDown + 1) };
   const toggleAudio = () => {
 
     if (isPlaying) {
@@ -41,13 +43,13 @@ const CardPlay = (props) => {
       setIsPlaying(true);
     }
   }
-  const onChange = value => {
+  const ChangeProgress = value => {
     setProgress(value);
   };
   
   return (
     <div className="card-container">
-      <img className="image" src={cover} alt={title}/>
+      <ImageAudio image={cover} alt={title}/>
       <div className="player">
         <p className="audio-title">{title}</p>
         <div className="audio-controls">
@@ -56,8 +58,8 @@ const CardPlay = (props) => {
           </div>
           <Slider className="progress"
               min={0}
-              max={100} //duracion (?
-              onChange={onChange}
+              max={100}
+              onChange={ChangeProgress}
               value={progress}
               tipFormatter={null}
             />
@@ -65,8 +67,8 @@ const CardPlay = (props) => {
         </div>
       </div>
       <div className="like-dislike">
-        <span onClick={handleLike}><Like /><small>{countLikes}</small></span>
-        <span onClick={handleDislike}><Dislike className="dislike" /><small>{countDislikes}</small></span>
+        <span><Like onClick={handleLike}/><small>{countLikes}</small></span>
+        <span><Dislike onClick={handleDislike} className="dislike" /><small>{countDislikes}</small></span>
       </div>
       <EditAndShare />
       <audio src={audioSource} ref={audioPlayer} onTimeUpdate={e => {
