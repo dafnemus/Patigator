@@ -1,24 +1,38 @@
 import React, { useState, useRef, useEffect } from "react";
-import { PlayCircleTwoTone, PauseCircleTwoTone, DislikeFilled, LikeFilled } from '@ant-design/icons';
+import { Slider } from 'antd'
+import { ReactComponent as Like } from './img/Like.svg'
+import { ReactComponent as Dislike } from './img/Dislike.svg'
+import { ReactComponent as PlayIcon } from './img/play-circle-o.svg'
+import { ReactComponent as PauseIcon } from './img/pause-circle-o.svg'
 import EditAndShare from "../edit-and-share";
-import ImageAudio from '../ImageAudio'
-import audioBadBunny from "../Audio/Bad Bunny - Si la veo a tu mama.mp3";
 import "./styles.css";
 
 const CardPlay = (props) => {
+
+  const [player] = useState(props)
   const audioPlayer = useRef(null);
-  const [progress, setProgress] = useState(80);
-  const [title] = useState("Bad Bunny - Si la veo a tu mamá");
+  const [audioSource, setAudioSource] = useState("");
+  const [cover, setCover] = useState("https://via.placeholder.com/75");
+  const [progress, setProgress] = useState(0);
+  const [title, setTitle] = useState("");
   const [countLikes, setCountLikes] = useState(0);
   const [countDislikes, setCountDislikes] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
-    console.log(progress, audioPlayer.current.duration);
-  }, [progress]);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const handleLike = (event) => { setCountLikes(countLikes + 1) };
-  const handleDislike = (event) => { setCountDislikes(countDislikes + 1) };
+    
+    setTitle(player.title)
+    setCountLikes(player.thumbsUp)
+    setCountDislikes(player.thumbsDown)
+    setCover(player.cover)
+    setAudioSource(player.audioSource)
+
+  }, [player, title, countLikes, countDislikes, cover,]);
+  
+  const handleLike = (e) => {setCountLikes(countLikes + 1) };
+  const handleDislike = (e) => {setCountDislikes(countDislikes + 1) };
   const toggleAudio = () => {
+
     if (isPlaying) {
       audioPlayer.current.pause();
       setIsPlaying(false);
@@ -27,39 +41,35 @@ const CardPlay = (props) => {
       setIsPlaying(true);
     }
   }
+  const onChange = value => {
+    setProgress(value);
+  };
+  
   return (
     <div className="card-container">
-      <ImageAudio />
-      <div className="audio-title">
-        <p>{title}</p>
-        <div className="container-audio" onClick={toggleAudio}>
-        <span className="icon-play">{isPlaying ? (<PauseCircleTwoTone style={{ fontSize: "25px" }} />) : (<PlayCircleTwoTone style={{ fontSize: "25px" }} />)}</span>
-        <div className="audio">
-          <div className="player">
-            <div className="logo" />
+      <img className="image" src={cover} alt={title}/>
+      <div className="player">
+        <p className="audio-title">{title}</p>
+        <div className="audio-controls">
+          <div className="icon-play" onClick={toggleAudio}>
+              {isPlaying ? (<PauseIcon />) : (<PlayIcon />)}
           </div>
-          <div className="progress">
-            <div className="loading" style={{ width: `${progress}%` }} /></div>
-        </div>
+          <Slider className="progress"
+              min={0}
+              max={100} //duracion (?
+              onChange={onChange}
+              value={progress}
+              tipFormatter={null}
+            />
+          <time className="elapsed">{progress.toFixed(2)}</time>
         </div>
       </div>
       <div className="like-dislike">
-        <div className="container-icon">
-          <span className="like" onClick={handleLike}>
-            <LikeFilled />
-          </span>
-          <span>{countLikes}</span>
-        </div>
-      
-        <div className="container-icon">
-          <span className="dislike" onClick={handleDislike}>
-            <DislikeFilled />
-          </span>
-          <span>{countDislikes}</span>
-        </div>
+        <span onClick={handleLike}><Like /><small>{countLikes}</small></span>
+        <span onClick={handleDislike}><Dislike className="dislike" /><small>{countDislikes}</small></span>
       </div>
       <EditAndShare />
-      <audio src={audioBadBunny} ref={audioPlayer} onTimeUpdate={e => {
+      <audio src={audioSource} ref={audioPlayer} onTimeUpdate={e => {
         setProgress((audioPlayer.current.currentTime * 100) / audioPlayer.current.duration);
       }} />
     </div>

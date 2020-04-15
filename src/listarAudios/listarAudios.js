@@ -17,15 +17,13 @@ export default class Example extends Component {
   componentDidMount(){
 
     var requestOptions = {
-      method: 'GET',
-      mode: 'no-cors',
+      method: 'GET'
     };
-    //se removio la url para no exponer la api
-    fetch(/*usar la url de la api*/"/api/audios", requestOptions)
+    
+    fetch(/*url de la api*/"/api/audios", requestOptions)
     
       .then(response => response.json())
-      .then(json => { console.log(json); this.setState({ isLoaded: true, data: json}); } )
-      
+      .then(json => { this.setState({ isLoaded: true, data: json}); } )
       .catch(error => console.log('error', error));
   };
 
@@ -37,13 +35,13 @@ export default class Example extends Component {
     else return (
       <>
         <Row justify="space-around">
-          {(data.map(
+          {data.map(data => (
             <Col span={11} key={data.id}>
 
               <CardPlay 
-                title={data.name} 
-                countLikes={data.thumbsUp}
-                countDislikes={data.thumbsDown}
+                title={data.name}
+                thumbsUp={data.thumbsUp}
+                thumbsDown={data.thumbsDown}
                 cover={data.image}
                 audioSource={data.audio}
               />
