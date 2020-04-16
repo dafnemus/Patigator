@@ -5,9 +5,8 @@ import { Row, Col } from 'antd';
 import Buscador from './Components/search';
 import Encabezado from './Components/encabezado';
 import UploadSong from './Components/modals/modal_upload';
-import CardPlay from './components/CardPlay';
 import Navbar from './navbar';
-import ListarAudios from './listarAudios';
+import ListaAudios from './listarAudios/listarAudios';
 import './App.css';
 import 'antd/dist/antd.css';
 
@@ -31,10 +30,7 @@ function App() {
         </Col>
       </Row>
       <Navbar />
-      <article>
-        <CardPlay />
-        <ListarAudios />
-      </article>
+      <ListaAudios />
     </div>
   );
 }
