@@ -1,6 +1,8 @@
 /* eslint-disable import/extensions */
 import api from './api.js';
 
-export const getRepro = (id) => api.get(`/api/audios=${id}`);
+export const getAudioById = (id) => api.get(`/api/audios=${id}`);
 
 export const getAllAudio = () => api.get('/api/audios');
+
+export const putAllAudio = (data) => api.put('api/audios', data);

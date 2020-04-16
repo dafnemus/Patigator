@@ -24,6 +24,7 @@ export default class Example extends Component {
 
   ListAudios = async () => {
     const response = await getAllAudio();
+    console.log(response.data);
     this.setState({
       data: response.data,
       isLoaded: !!this.state.data,

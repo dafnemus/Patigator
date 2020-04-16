@@ -1,8 +1,15 @@
+/* eslint-disable no-undef */
+/* eslint-disable import/named */
+/* eslint-disable new-cap */
+/* eslint-disable react/no-unused-state */
+/* eslint-disable comma-dangle */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable react/jsx-handler-names */
 import React from 'react';
 import { Modal, Button, Input, Divider } from 'antd';
 import { EditOutlined } from '@ant-design/icons';
+
+import { putEditAudio } from '../../../service/reproService';
 
 import InputChange from './changeCategory';
 import ChangeImage from './changeImage';
@@ -12,15 +19,19 @@ import './style.css';
 import '../../Colorsmodal/style.css';
 
 class EditAudio extends React.Component {
-  state = { visible: false };
+  state = { visible: false, data: [] };
 
   showModal = () => this.setState({ visible: true });
 
-  handleOk = () => this.setState({ visible: false });
+  handleOk = () => {
+    putEditAudio(data);
+    this.setState({ visible: false });
+  };
 
   handleCancel = () => this.setState({ visible: false });
 
   render() {
+    const data = { name, image, audio };
     return (
       <div>
         <Button className="open-modal" type="link" onClick={this.showModal}>
@@ -35,15 +46,15 @@ class EditAudio extends React.Component {
           cancelText="Cancelar"
           zIndex={2}
         >
-          <ChangeImage />
+          <ChangeImage dataimage={data.image} />
           <Divider style={{ height: '0px', margin: '10px' }} />
           <label> Nombre </label>
-          <Input />
+          <Input placeholder={data.name} />
           <Divider style={{ height: '0px', margin: '30px' }} />
           <label> Categorias </label>
           <InputChange zIndex={3} />
           <Divider style={{ height: '0px', margin: '20px' }} />
-          <ChangeAudio />
+          <ChangeAudio audio={data.audio} />
         </Modal>
       </div>
     );
