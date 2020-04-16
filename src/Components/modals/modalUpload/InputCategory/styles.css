@@ -1,0 +1,17 @@
+.categoria {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 8;
+}
+
+.categoria > a {
+  padding: 8px;
+  flex: none;
+  display: block;
+  cursor: pointer;
+}
+
+.margen {
+  margin: 8px 0px;
+  margin-bottom: 25px;
+}
