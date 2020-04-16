@@ -3,8 +3,8 @@ import { Modal, Button } from 'antd';
 import { ReactComponent as Logo } from './img/bg-upload.svg';
 import { Input } from 'antd';
 import Avatar from './uploadCover';
-import Category from './Input_category/';
-import MyUpload from './button_upload/';
+import Category from './InputCategory';
+import MyUpload from './buttonUpload';
 import 'antd/dist/antd.css';
 import './styles.css';
 

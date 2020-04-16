@@ -4,22 +4,12 @@ import { PlusOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 import './styles.css';
 
-const { Option } = Select;
-
-const children = [];
-for (let i = 10; i < 36; i++) {
-  children.push(<Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>);
-}
-
-function handleChange(value) {
-}
-
-let index = 0;
-
 class Category extends React.Component {
+  
   state = {
     items: ['Rock', 'Pop'],
     name: '',
+    options: [],
   };
 
   onNameChange = event => {
@@ -30,17 +20,22 @@ class Category extends React.Component {
 
   addItem = () => {
     const { items, name } = this.state;
+    
     this.setState({
-      items: [...items, name || `New item ${index++}`],
+      items: [...items, name],
       name: '',
     });
   };
 
+  handleChange(value) {
+  };
+
   render() {
-    const { items, name } = this.state;
+    const { items, name, options } = this.state;
+    const { Option } = Select;
 
     return (
-      <Select mode="tags" style={{ width: '100%' }} className="margen" onChange={handleChange} tokenSeparators={[',']}
+      <Select mode="tags" style={{ width: '100%' }} className="margen" onChange={this.handleChange} tokenSeparators={[',']}
         placeholder="Seleccionar"
         dropdownRender={menu => (
           <div>
@@ -55,7 +50,7 @@ class Category extends React.Component {
             </div>
           </div>
         )}
-      > {children}
+      > {options}
         {items.map(item => (
           <Option key={item}>{item}</Option>
         ))}

@@ -1,10 +1,10 @@
-.Categoria {
+.categoria {
   display: flex;
   flex-wrap: nowrap;
   padding: 8;
 }
 
-.Categoria > a {
+.categoria > a {
   padding: 8px;
   flex: none;
   display: block;
