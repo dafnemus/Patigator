@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-state */
 /* eslint-disable comma-dangle */
 /* eslint-disable react/no-access-state-in-setstate */
 /* eslint-disable no-shadow */
@@ -8,6 +9,7 @@ import { Row, Col } from 'antd';
 
 import CardPlay from '../components/CardPlay';
 import { getAllAudio } from '../service/reproService';
+import { Provider } from '../Context/contex';
 
 export default class Example extends Component {
   constructor(props) {
@@ -15,6 +17,7 @@ export default class Example extends Component {
     this.state = {
       isLoaded: false,
       data: [],
+      findNumber: (id) => this.state.data.filter((myData) => myData.id === id),
     };
   }
 
@@ -38,7 +41,7 @@ export default class Example extends Component {
       return <p>Cargando...</p>;
     }
     return (
-      <>
+      <Provider value={data}>
         <Row justify="space-around">
           {data.map((data) => (
             <Col span={11} key={data.id}>
@@ -48,11 +51,12 @@ export default class Example extends Component {
                 thumbsDown={data.thumbsDown}
                 cover={data.image}
                 audioSource={data.audio}
+                id={data.id}
               />
             </Col>
           ))}
         </Row>
-      </>
+      </Provider>
     );
   }
 }

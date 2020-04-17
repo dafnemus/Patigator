@@ -5,4 +5,4 @@ export const getAudioById = (id) => api.get(`/api/audios=${id}`);
 
 export const getAllAudio = () => api.get('/api/audios');
 
-export const putAllAudio = (data) => api.put('api/audios', data);
+export const putEditAudio = (data) => api.put('api/audios', data);

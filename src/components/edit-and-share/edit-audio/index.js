@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 /* eslint-disable no-undef */
 /* eslint-disable import/named */
 /* eslint-disable new-cap */
@@ -10,6 +11,7 @@ import { Modal, Button, Input, Divider } from 'antd';
 import { EditOutlined } from '@ant-design/icons';
 
 import { putEditAudio } from '../../../service/reproService';
+import { Consumer } from '../../../Context/contex';
 
 import InputChange from './changeCategory';
 import ChangeImage from './changeImage';
@@ -31,32 +33,37 @@ class EditAudio extends React.Component {
   handleCancel = () => this.setState({ visible: false });
 
   render() {
-    const data = { name, image, audio };
+    // const data = { name, image, audio };
     return (
-      <div>
-        <Button className="open-modal" type="link" onClick={this.showModal}>
-          <EditOutlined className="icon-edit" /> Editar
-        </Button>
-        <Modal
-          title="Editar Audio"
-          visible={this.state.visible}
-          onOk={this.handleOk}
-          onCancel={this.handleCancel}
-          okText="Aceptar"
-          cancelText="Cancelar"
-          zIndex={2}
-        >
-          <ChangeImage dataimage={data.image} />
-          <Divider style={{ height: '0px', margin: '10px' }} />
-          <label> Nombre </label>
-          <Input placeholder={data.name} />
-          <Divider style={{ height: '0px', margin: '30px' }} />
-          <label> Categorias </label>
-          <InputChange zIndex={3} />
-          <Divider style={{ height: '0px', margin: '20px' }} />
-          <ChangeAudio audio={data.audio} />
-        </Modal>
-      </div>
+      <Consumer>
+        {({ data, findNumber }) => (
+          <div>
+            <Button className="open-modal" type="link" onClick={this.showModal}>
+              <EditOutlined className="icon-edit" /> Editar
+            </Button>
+            <Modal
+              title="Editar Audio"
+              visible={this.state.visible}
+              onOk={this.handleOk}
+              onCancel={this.handleCancel}
+              okText="Aceptar"
+              cancelText="Cancelar"
+              zIndex={2}
+            >
+              <ChangeImage dataimage={data.image} />
+              <Divider style={{ height: '0px', margin: '10px' }} />
+              <label> Nombre </label>
+              <Input placeholder={data.name} />
+              <Divider style={{ height: '0px', margin: '30px' }} />
+              <label> Categorias </label>
+              <InputChange zIndex={3} />
+              <Divider style={{ height: '0px', margin: '20px' }} />
+              <ChangeAudio audio={data.audio} />
+            </Modal>
+          </div>
+        )}
+        ;
+      </Consumer>
     );
   }
 }
