@@ -30,7 +30,7 @@ class EditAudio extends React.Component {
   };
   
   handleOk = () => {
-    putEditAudio(data);
+    putEditAudio(this.state.data);
     this.setState({ visible: false });
   };
 
