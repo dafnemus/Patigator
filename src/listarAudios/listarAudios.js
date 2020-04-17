@@ -17,7 +17,11 @@ export default class Example extends Component {
     this.state = {
       isLoaded: false,
       data: [],
-      findNumber: (id) => this.state.data.filter((myData) => myData.id === id),
+      /*       findNumber: (id) => this.state.data.filter((myData) => myData.id === id),
+       */
+
+      id: '',
+      setId: (id) => this.setState({ id }),
     };
   }
 
@@ -27,7 +31,6 @@ export default class Example extends Component {
 
   ListAudios = async () => {
     const response = await getAllAudio();
-    console.log(response.data);
     this.setState({
       data: response.data,
       isLoaded: !!this.state.data,
@@ -41,8 +44,8 @@ export default class Example extends Component {
       return <p>Cargando...</p>;
     }
     return (
-      <Provider value={data}>
-        <Row justify="space-around">
+      <Row justify="space-around">
+        <Provider value={this.state}>
           {data.map((data) => (
             <Col span={11} key={data.id}>
               <CardPlay
@@ -55,8 +58,8 @@ export default class Example extends Component {
               />
             </Col>
           ))}
-        </Row>
-      </Provider>
+        </Provider>
+      </Row>
     );
   }
 }

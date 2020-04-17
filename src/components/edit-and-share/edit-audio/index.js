@@ -21,49 +21,53 @@ import './style.css';
 import '../../Colorsmodal/style.css';
 
 class EditAudio extends React.Component {
-  state = { visible: false, data: [] };
+  state = { visible: false, data: {} };
 
-  showModal = () => this.setState({ visible: true });
-
+  showModal = (e, data, id) => {
+    this.setState({ visible: true });
+    const [dataMusic] = data.filter((n) => n.id == id);
+    this.setState({ data: dataMusic });
+  };
+  
   handleOk = () => {
     putEditAudio(data);
     this.setState({ visible: false });
   };
 
   handleCancel = () => this.setState({ visible: false });
-
+  
   render() {
     // const data = { name, image, audio };
+    console.log(this.state.data)
     return (
-      <Consumer>
-        {({ data, findNumber }) => (
-          <div>
-            <Button className="open-modal" type="link" onClick={this.showModal}>
+      <div>
+        <Consumer>
+          {({ data, id }) => (
+            <Button className="open-modal" type="link" onClick={(e) => this.showModal(e, data, id)}>
               <EditOutlined className="icon-edit" /> Editar
             </Button>
-            <Modal
-              title="Editar Audio"
-              visible={this.state.visible}
-              onOk={this.handleOk}
-              onCancel={this.handleCancel}
-              okText="Aceptar"
-              cancelText="Cancelar"
-              zIndex={2}
-            >
-              <ChangeImage dataimage={data.image} />
-              <Divider style={{ height: '0px', margin: '10px' }} />
-              <label> Nombre </label>
-              <Input placeholder={data.name} />
-              <Divider style={{ height: '0px', margin: '30px' }} />
-              <label> Categorias </label>
-              <InputChange zIndex={3} />
-              <Divider style={{ height: '0px', margin: '20px' }} />
-              <ChangeAudio audio={data.audio} />
-            </Modal>
-          </div>
-        )}
-        ;
-      </Consumer>
+          )}
+        </Consumer>
+        <Modal
+          title="Editar Audio"
+          visible={this.state.visible}
+          onOk={this.handleOk}
+          onCancel={this.handleCancel}
+          okText="Aceptar"
+          cancelText="Cancelar"
+          zIndex={2}
+        >
+          <ChangeImage />
+          <Divider style={{ height: '0px', margin: '10px' }} />
+          <label> Nombre </label>
+          <Input value={this.state.data.name} />
+          <Divider style={{ height: '0px', margin: '30px' }} />
+          <label> Categorias </label>
+          <InputChange zIndex={3} />
+          <Divider style={{ height: '0px', margin: '20px' }} />
+          <ChangeAudio />
+        </Modal>
+      </div>
     );
   }
 }

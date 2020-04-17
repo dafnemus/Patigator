@@ -50,7 +50,6 @@ const CardPlay = (props) => {
   const ChangeProgress = (value) => {
     setProgress(value);
   };
-
   return (
     <div className="card-container">
       <ImageAudio image={cover} alt={title} />
@@ -81,7 +80,7 @@ const CardPlay = (props) => {
           <small>{countDislikes}</small>
         </span>
       </div>
-      <EditAndShare />
+      <EditAndShare id={props.id} />
       <audio
         src={audioSource}
         ref={audioPlayer}
