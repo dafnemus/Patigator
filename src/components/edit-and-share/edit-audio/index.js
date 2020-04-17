@@ -25,17 +25,17 @@ class EditAudio extends React.Component {
 
   showModal = (data, id) => {
     this.setState({ visible: true });
-    const [dataMusic] = data.filter((n) => n.id == id);
+    const [dataMusic] = data.filter((n) => n.id === id);
     this.setState({ data: dataMusic });
   };
-  
+
   handleOk = () => {
     putEditAudio(this.state.data);
     this.setState({ visible: false });
   };
 
   handleCancel = () => this.setState({ visible: false });
-  
+
   render() {
     // const data = { name, image, audio };
     return (
