@@ -23,7 +23,7 @@ import '../../Colorsmodal/style.css';
 class EditAudio extends React.Component {
   state = { visible: false, data: {} };
 
-  showModal = (e, data, id) => {
+  showModal = (data, id) => {
     this.setState({ visible: true });
     const [dataMusic] = data.filter((n) => n.id == id);
     this.setState({ data: dataMusic });
@@ -42,7 +42,7 @@ class EditAudio extends React.Component {
       <div>
         <Consumer>
           {({ data, id }) => (
-            <Button className="open-modal" type="link" onClick={(e) => this.showModal(e, data, id)}>
+            <Button className="open-modal" type="link" onClick={() => this.showModal(data, id)}>
               <EditOutlined className="icon-edit" /> Editar
             </Button>
           )}
