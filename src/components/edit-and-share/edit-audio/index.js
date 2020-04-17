@@ -35,12 +35,12 @@ class EditAudio extends React.Component {
   render() {
     // const data = { name, image, audio };
     return (
-      <Consumer>
-        {({ data, findNumber }) => (
-          <div>
-            <Button className="open-modal" type="link" onClick={this.showModal}>
-              <EditOutlined className="icon-edit" /> Editar
-            </Button>
+      <div>
+        <Button className="open-modal" type="link" onClick={this.showModal}>
+          <EditOutlined className="icon-edit" /> Editar
+        </Button>
+        <Consumer>
+          {({ data, findNumber }) => (
             <Modal
               title="Editar Audio"
               visible={this.state.visible}
@@ -60,10 +60,10 @@ class EditAudio extends React.Component {
               <Divider style={{ height: '0px', margin: '20px' }} />
               <ChangeAudio audio={data.audio} />
             </Modal>
-          </div>
-        )}
-        ;
-      </Consumer>
+          )}
+          ;
+        </Consumer>
+      </div>
     );
   }
 }

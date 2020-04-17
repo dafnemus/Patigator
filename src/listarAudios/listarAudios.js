@@ -41,10 +41,10 @@ export default class Example extends Component {
       return <p>Cargando...</p>;
     }
     return (
-      <Provider value={data}>
-        <Row justify="space-around">
-          {data.map((data) => (
-            <Col span={11} key={data.id}>
+      <Row justify="space-around">
+        {data.map((data) => (
+          <Col span={11} key={data.id}>
+            <Provider value={data}>
               <CardPlay
                 title={data.name}
                 thumbsUp={data.thumbsUp}
@@ -53,10 +53,10 @@ export default class Example extends Component {
                 audioSource={data.audio}
                 id={data.id}
               />
-            </Col>
-          ))}
-        </Row>
-      </Provider>
+            </Provider>
+          </Col>
+        ))}
+      </Row>
     );
   }
 }
