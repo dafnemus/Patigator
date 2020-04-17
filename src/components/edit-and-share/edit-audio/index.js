@@ -38,7 +38,6 @@ class EditAudio extends React.Component {
   
   render() {
     // const data = { name, image, audio };
-    console.log(this.state.data)
     return (
       <div>
         <Consumer>
