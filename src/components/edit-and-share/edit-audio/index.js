@@ -26,7 +26,7 @@ class EditAudio extends React.Component {
   showModal = (data, id) => {
     this.setState({ visible: true });
     const [dataMusic] = data.filter((n) => n.id === id);
-    this.setState({ data: dataMusic });
+    this.setState({ dataMusic });
   };
 
   handleOk = () => {
@@ -56,15 +56,20 @@ class EditAudio extends React.Component {
           cancelText="Cancelar"
           zIndex={2}
         >
-          <ChangeImage />
+          <ChangeImage image={this.state.data.image} />
           <Divider style={{ height: '0px', margin: '10px' }} />
           <label> Nombre </label>
-          <Input value={this.state.data.name} />
+          <Input
+            value={this.state.data.name}
+            onChange={(event) => {
+              this.setState({ name: event.target.value });
+            }}
+          />
           <Divider style={{ height: '0px', margin: '30px' }} />
           <label> Categorias </label>
           <InputChange zIndex={3} />
           <Divider style={{ height: '0px', margin: '20px' }} />
-          <ChangeAudio />
+          <ChangeAudio urlAudio={this.state.data.audio} />
         </Modal>
       </div>
     );

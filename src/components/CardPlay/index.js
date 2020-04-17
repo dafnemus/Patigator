@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-magic-numbers */
 import React, { useState, useRef, useEffect } from 'react';
 import { Slider } from 'antd';

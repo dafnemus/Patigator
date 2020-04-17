@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable comma-dangle */
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
@@ -17,9 +18,9 @@ class ChangeAudio extends React.Component {
   render() {
     return (
       <div>
+        <PaperClipOutlined style={{ color: 'rgba(0, 0, 0, 0.65)' }} />
+        <span urlAudio={this.props.urlAudio} />
         <Button type="link" change={this.state} onClick={this.handleChange}>
-          <PaperClipOutlined style={{ color: 'rgba(0, 0, 0, 0.65)' }} />
-          Url-Audio
           <CloseOutlined style={{ color: 'rgba(0, 0, 0, 0.65)' }} />
         </Button>
         {this.state.change === true && <UploadAudio />}

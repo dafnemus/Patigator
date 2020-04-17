@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable comma-dangle */
 /* eslint-disable react/forbid-dom-props */
 /* eslint-disable react/no-unused-state */
@@ -34,7 +35,7 @@ class ChangeImage extends React.Component {
 
   uploadButton = (
     <div>
-      <ImageAudio />
+      <ImageAudio image={this.props.image} />
     </div>
   );
 
