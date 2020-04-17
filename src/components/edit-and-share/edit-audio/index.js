@@ -56,7 +56,12 @@ class EditAudio extends React.Component {
           cancelText="Cancelar"
           zIndex={2}
         >
-          <ChangeImage image={this.state.data.image} />
+          <ChangeImage
+            image={this.state.data.image}
+            onChange={(event) => {
+              this.setState({ image: event.target.value });
+            }}
+          />
           <Divider style={{ height: '0px', margin: '10px' }} />
           <label> Nombre </label>
           <Input
@@ -69,7 +74,12 @@ class EditAudio extends React.Component {
           <label> Categorias </label>
           <InputChange zIndex={3} />
           <Divider style={{ height: '0px', margin: '20px' }} />
-          <ChangeAudio urlAudio={this.state.data.audio} />
+          <ChangeAudio
+            urlAudio={this.state.data.audio}
+            onChange={(event) => {
+              this.setState({ audio: event.target.value });
+            }}
+          />
         </Modal>
       </div>
     );
