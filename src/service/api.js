@@ -2,7 +2,7 @@
 import { create } from 'apisauce';
 
 const api = create({
-  baseURL: 'https://patigator-a220c.firebaseapp.com',
+  baseURL: process.env.REACT_APP_API_BASE_URL,
 });
 
 export default api;

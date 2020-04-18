@@ -15,11 +15,12 @@ class ChangeAudio extends React.Component {
 
   handleChange = () => this.setState({ change: true });
 
+  // document.getElementById("caja").style.display = "none"
   render() {
     return (
       <div>
         <PaperClipOutlined style={{ color: 'rgba(0, 0, 0, 0.65)' }} />
-        <span urlAudio={this.props.urlAudio} />
+        <a href={this.props.urlAudio}>{this.props.urlAudio}</a>
         <Button type="link" change={this.state} onClick={this.handleChange}>
           <CloseOutlined style={{ color: 'rgba(0, 0, 0, 0.65)' }} />
         </Button>
