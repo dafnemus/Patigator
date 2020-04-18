@@ -13,16 +13,25 @@ class ChangeAudio extends React.Component {
     change: false,
   };
 
-  handleChange = () => this.setState({ change: true });
+  handleChange = () => {
+    const invisible = document.getElementById('flotante');
+    invisible.style.display = 'none';
+    const icon = document.getElementById('icon');
+    icon.style.display = 'none';
+    const url = document.getElementById('url');
+    url.style.display = 'none';
+    this.setState({ change: true });
+  };
 
-  // document.getElementById("caja").style.display = "none"
   render() {
     return (
       <div>
-        <PaperClipOutlined style={{ color: 'rgba(0, 0, 0, 0.65)' }} />
-        <a href={this.props.urlAudio}>{this.props.urlAudio}</a>
-        <Button type="link" change={this.state} onClick={this.handleChange}>
-          <CloseOutlined style={{ color: 'rgba(0, 0, 0, 0.65)' }} />
+        <PaperClipOutlined style={{ color: 'rgba(0, 0, 0, 0.65)' }} id="icon" />
+        <a href={this.props.urlAudio} id="url">
+          {this.props.urlAudio}
+        </a>
+        <Button type="link" id="flotante" change={this.state} onClick={this.handleChange}>
+          <CloseOutlined id="flotante" style={{ color: 'rgba(0, 0, 0, 0.65)' }} />
         </Button>
         {this.state.change === true && <UploadAudio />}
       </div>
