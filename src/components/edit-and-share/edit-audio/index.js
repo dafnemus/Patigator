@@ -21,16 +21,18 @@ import './style.css';
 import '../../Colorsmodal/style.css';
 
 class EditAudio extends React.Component {
-  state = { visible: false, data: {} };
+  state = { visible: false };
 
   showModal = (data, id) => {
     this.setState({ visible: true });
     const [dataMusic] = data.filter((n) => n.id === id);
-    this.setState({ dataMusic });
+    this.setState({ ...dataMusic });
   };
 
-  handleOk = () => {
-    putEditAudio(this.state.data);
+  handleOk = async () => {
+    const { id, categories, plays, updatedAt, image, audio, thumbsUp, thumbsDown, name } = this.state;
+    const data = { id, categories, plays, updatedAt, image, audio, thumbsUp, thumbsDown, name };
+    await putEditAudio(data);
     this.setState({ visible: false });
   };
 
@@ -57,7 +59,7 @@ class EditAudio extends React.Component {
           zIndex={2}
         >
           <ChangeImage
-            image={this.state.data.image}
+            image={this.state.image}
             onChange={(event) => {
               this.setState({ image: event.target.value });
             }}
@@ -65,7 +67,7 @@ class EditAudio extends React.Component {
           <Divider style={{ height: '0px', margin: '10px' }} />
           <label> Nombre </label>
           <Input
-            value={this.state.data.name}
+            value={this.state.name}
             onChange={(event) => {
               this.setState({ name: event.target.value });
             }}
@@ -75,7 +77,7 @@ class EditAudio extends React.Component {
           <InputChange zIndex={3} />
           <Divider style={{ height: '0px', margin: '20px' }} />
           <ChangeAudio
-            urlAudio={this.state.data.audio}
+            urlAudio={this.state.audio}
             onChange={(event) => {
               this.setState({ audio: event.target.value });
             }}
