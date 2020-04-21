@@ -15,7 +15,6 @@ export default class Example extends Component {
   }
 
   componentDidMount(){
-
       this.ListAudios();
   };
 
