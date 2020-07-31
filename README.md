@@ -1,5 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+## Practicas preprofesionales en Innovid con REACT Y manejo de API.rest en grupo.
 ## Available Scripts
 
 In the project directory, you can run:
